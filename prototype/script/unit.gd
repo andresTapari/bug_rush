@@ -10,7 +10,7 @@ export var target_to_move: NodePath
 var target = null
 
 func _ready() -> void:
-	if target_to_move:
+	if target_to_move !=  null:
 		target = get_node(target_to_move).translation
 
 func _physics_process(delta):

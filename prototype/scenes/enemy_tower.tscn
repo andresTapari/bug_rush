@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://script/enemy_tower.gd" type="Script" id=1]
+
+[sub_resource type="CylinderShape" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.00784314, 0.00784314, 1 )
+
+[sub_resource type="CylinderMesh" id=2]
+material = SubResource( 1 )
+top_radius = 0.5
+
+[sub_resource type="CylinderShape" id=3]
+radius = 8.0
+
+[node name="enemy_tower" type="StaticBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5647, 0 )
+
+[node name="zona_de_deteccion" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="zona_de_deteccion"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_entered"]
+[connection signal="body_exited" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_exited"]

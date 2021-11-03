@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="bug_rush_prototype"
-run/main_scene="res://lvls/dev_lvl_movement.tscn"
+run/main_scene="res://lvls/dev_lvl_combat.tscn"
 config/icon="res://icon.png"
 
 [physics]
