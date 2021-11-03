@@ -1,16 +1,25 @@
-extends Spatial
+extends KinematicBody
+
+export var speed = 10
+export var gravity = -5
 
 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+export var velocity = Vector3.ZERO
+export var target_to_move: NodePath
 
+var target = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if target_to_move:
+		target = get_node(target_to_move).translation
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _physics_process(delta):
+	velocity.y += gravity * delta
+	if target:
+		look_at(target, Vector3.UP)
+		rotation.x = 0
+		velocity = -transform.basis.z * speed
+		if transform.origin.distance_to(target) < 1.5:
+			target = null
+			velocity = Vector3.ZERO
+	velocity = move_and_slide(velocity, Vector3.UP)
