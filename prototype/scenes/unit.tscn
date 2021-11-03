@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/HealthBarr3D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/unit.gd" type="Script" id=2]
@@ -10,9 +10,6 @@ albedo_color = Color( 0, 0.717647, 1, 1 )
 
 [sub_resource type="PrismMesh" id=6]
 material = SubResource( 7 )
-
-[sub_resource type="ViewportTexture" id=8]
-viewport_path = NodePath("Viewport")
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -29,5 +26,4 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="HealthBarr3D" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20875, 0 )
-texture = SubResource( 8 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2.20875, 0 )
