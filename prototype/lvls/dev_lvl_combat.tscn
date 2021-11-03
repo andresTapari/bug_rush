@@ -56,8 +56,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, 10 )
 [node name="StaticBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
+[node name="StaticBody2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0 )
+
 [node name="Spatial" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0165, 3.00525, -12.5807 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9531, 3.04763, -12.6007 )
 velocity = Vector3( -0.000146138, -55.2497, -2.10973e-05 )
 target_to_move = NodePath("../CSGCombiner/Punto_B")
 
