@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/HeatlBarr2D.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Viewport" type="Viewport" parent="."]
+arvr = true
+size = Vector2( 200, 40 )
+transparent_bg = true
+
+[node name="HealthBarr2D" parent="Viewport" instance=ExtResource( 2 )]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+flip_v = true
+billboard = 1
+texture = SubResource( 1 )

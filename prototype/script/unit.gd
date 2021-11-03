@@ -1,8 +1,7 @@
 extends KinematicBody
 
-export var speed = 10
+export var speed = 5
 export var gravity = -5
-
 
 export var velocity = Vector3.ZERO
 export var target_to_move: NodePath

@@ -62,16 +62,16 @@ velocity = Vector3( -0.000146138, -55.2497, -2.10973e-05 )
 target_to_move = NodePath("../CSGCombiner/Punto_B")
 
 [node name="Spatial2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0165, 3, -8.60357 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0165, 3.00525, -8.97246 )
 velocity = Vector3( -0.000146138, -55.2497, -2.10973e-05 )
 target_to_move = NodePath("../CSGCombiner/Punto_B")
 
 [node name="Spatial3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01651, 3, -6.60357 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76113, 3.00525, -8.97246 )
 velocity = Vector3( -0.000146138, -55.2497, -2.10973e-05 )
 target_to_move = NodePath("../CSGCombiner/Punto_B")
 
 [node name="Spatial4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01651, 3, -11.6036 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76113, 3.00525, -13.0918 )
 velocity = Vector3( -0.000146138, -55.2497, -2.10973e-05 )
 target_to_move = NodePath("../CSGCombiner/Punto_B")
