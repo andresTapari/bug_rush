@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://script/HeatlBarr2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/texture/health_barr/barHorizontal_green_mid 200.png" type="Texture" id=3]
+
+[node name="HealthBarr2D" type="TextureProgress"]
+margin_right = 200.0
+margin_bottom = 40.0
+max_value = 10.0
+value = 10.0
+texture_progress = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
