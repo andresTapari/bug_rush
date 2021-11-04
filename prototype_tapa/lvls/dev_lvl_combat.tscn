@@ -32,11 +32,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6, -9 )
 [node name="StaticBody" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157766, 1, -0.411026 )
 
-[node name="StaticBody2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18301, 1, -9.39083 )
-
 [node name="StaticBody3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0858605, 1, 13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157766, 1, 13.589 )
+
+[node name="StaticBody4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4946, 1, 12.589 )
+
+[node name="StaticBody2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -0.411026 )
 
 [node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
 zoom_speed = 0.25

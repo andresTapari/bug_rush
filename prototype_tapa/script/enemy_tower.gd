@@ -4,6 +4,7 @@ extends StaticBody
 var targets_to_attack: Array = []
 var weapon_enable: bool = true
 
+signal tower_destroyed(value)
 
 export var total_health = 10
 var actual_health = total_health
@@ -51,6 +52,7 @@ func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
 	if actual_health <= 0:
+		emit_signal("tower_destroyed",self)
 		queue_free()
 
 # Señales:
