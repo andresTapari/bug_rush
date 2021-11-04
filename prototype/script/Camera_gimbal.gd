@@ -6,7 +6,7 @@ export (float, 0.0, 2.0) var rotation_speed = PI/2
 
 # mouse properties
 
-export (bool) var mouse_control = true
+export (bool) var mouse_control = false
 export (float, 0.001, 0.1) var mouse_sensitivity = 0.005
 export (bool) var invert_y = false
 export (bool) var invert_x = false
@@ -15,13 +15,15 @@ export (bool) var invert_x = false
 
 export (float) var max_zoom = 10.0
 export (float) var min_zoom = 0.4
-export (float, 0.05, 1.0) var zoom_speed = 0.09
+export (float, 0.05, 2) var zoom_speed = 0.09
 
-var zoom = 1.5
+var zoom = 10
 
 func _unhandled_input(event):
 #	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 #		return
+	if event.is_action_pressed('scroll_button'):
+		mouse_control = !mouse_control
 	if event.is_action_pressed("cam_zoom_in"):
 		zoom -= zoom_speed
 	if event.is_action_pressed("cam_zoom_out"):
