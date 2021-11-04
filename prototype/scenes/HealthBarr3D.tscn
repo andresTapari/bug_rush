@@ -5,7 +5,8 @@
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Viewport")
 
-[node name="Spatial" type="Spatial"]
+[node name="HealthBarr" type="Spatial"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Viewport" type="Viewport" parent="."]
 arvr = true

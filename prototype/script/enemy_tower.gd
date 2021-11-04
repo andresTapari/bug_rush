@@ -4,8 +4,13 @@ extends StaticBody
 var targets_to_attack: Array = []
 var weapon_enable: bool = true
 
+
+export var total_health = 10
+var actual_health = total_health
+
 onready var draw   = get_node('Muzzle/Draw')
 onready var muzzle = get_node('Muzzle')
+onready var HealthBarr = get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
 onready var BULLET = preload('res://scenes/bullet.tscn')
 
@@ -42,6 +47,11 @@ func shoot():
 		get_parent().add_child(b)
 		get_node("Timer").start()
 
+func hurt(_damage: float) -> void:
+	actual_health = actual_health - _damage
+	HealthBarr.update_bar(actual_health,total_health)
+	if actual_health <= 0:
+		queue_free()
 
 # Señales:
 func _on_zona_de_deteccion_body_entered(body: Node) -> void:
