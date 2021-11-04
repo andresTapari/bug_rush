@@ -14,14 +14,13 @@ export var target_to_move: NodePath
 var targets_to_attack:Array = [] setget set_targets_to_attack
 var target				= null
 var actual_health:float	= total_health
-
+var target_pos: Vector3 = Vector3()
 var ready_to_hit: bool = true
 
 func _ready() -> void:
 	pass
 
 func _physics_process(delta):
-	var target_pos: Vector3 = Vector3()
 	if !targets_to_attack.empty():
 		if !is_instance_valid(target):
 			target_pos = self.translation
