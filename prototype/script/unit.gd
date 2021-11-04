@@ -49,7 +49,6 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 # Funciones:
-
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
