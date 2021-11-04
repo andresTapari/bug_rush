@@ -23,7 +23,9 @@ func _unhandled_input(event):
 #	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 #		return
 	if event.is_action_pressed('scroll_button'):
-		mouse_control = !mouse_control
+		mouse_control = true
+	if event.is_action_released('scroll_button'):
+		mouse_control = false
 	if event.is_action_pressed("cam_zoom_in"):
 		zoom -= zoom_speed
 	if event.is_action_pressed("cam_zoom_out"):
