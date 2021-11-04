@@ -11,10 +11,12 @@ export var target_to_move: NodePath
 export var damage: float = 3
 
 var targets_to_attack:Array = [] setget set_targets_to_attack
-var target				= null
-var actual_health:float	= total_health
-
 var ready_to_hit: bool = true
+
+var mineral_pos= null
+var Queen_pos=null
+var target = null
+var actual_health = total_health
 
 func _ready() -> void:
 	pass
