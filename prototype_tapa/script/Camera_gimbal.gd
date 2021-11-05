@@ -25,7 +25,8 @@ export (float) var max_zoom = 10.0
 export (float) var min_zoom = 0.4
 export (float, 0.05, 2) var zoom_speed = 0.09
 
-var zoom = 10
+export (float, 0.4, 10) var zoom = 5
+
 var camera_pos: Vector3 = Vector3()
 var move_enable: bool = true
 var lerp_speed: float = 5

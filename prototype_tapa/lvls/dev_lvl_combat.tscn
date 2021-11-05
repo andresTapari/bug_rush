@@ -7,6 +7,7 @@
 [ext_resource path="res://script/dev_lvl_combat.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
 albedo_color = Color( 0.658824, 0.662745, 1, 1 )
 albedo_texture = ExtResource( 2 )
 
@@ -48,7 +49,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -12.411 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158005, 1, -12.411 )
 
 [node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
-zoom_speed = 0.25
+zoom_speed = 0.35
+zoom = 7.0
 
 [node name="Spawner" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79934, 1.26164, -9.25345 )

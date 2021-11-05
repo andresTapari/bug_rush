@@ -37,6 +37,6 @@ func spawn(_stats) -> Node:
 	u.set_stats(_stats)
 	u.transform = $Position3D.global_transform
 	u.translation += Vector3(rng.randi_range(-2, 2),
-							 rng.randi_range(-1, 2),
+							 0,
 							 rng.randi_range(-2, 2))
 	return u
