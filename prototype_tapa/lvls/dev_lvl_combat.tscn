@@ -30,16 +30,22 @@ light_energy = 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6, -9 )
 
 [node name="StaticBody" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157766, 1, -0.411026 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157766, 1, 6.58897 )
 
 [node name="StaticBody3" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157766, 1, 13.589 )
 
 [node name="StaticBody4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4946, 1, 12.589 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4946, 1, 12.589 )
 
 [node name="StaticBody2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -0.411026 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9842, 1, 6.58897 )
+
+[node name="StaticBody5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -12.411 )
+
+[node name="StaticBody6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158005, 1, -12.411 )
 
 [node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
 zoom_speed = 0.25

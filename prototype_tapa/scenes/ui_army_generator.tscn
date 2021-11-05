@@ -4,8 +4,10 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="army_generator" type="WindowDialog"]
+visible = true
+margin_top = -2.0
 margin_right = 320.0
-margin_bottom = 152.0
+margin_bottom = 325.0
 popup_exclusive = true
 window_title = "Arma tu ejercito"
 script = ExtResource( 1 )
@@ -67,6 +69,94 @@ margin_right = 136.0
 margin_bottom = 120.0
 text = "+"
 
+[node name="icon2" type="Sprite" parent="."]
+position = Vector2( 40, 172.545 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 140.545
+margin_right = 91.0
+margin_bottom = 154.545
+text = "Cubito"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_unit2" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 156.545
+margin_right = 112.0
+margin_bottom = 180.545
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_less2" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 156.545
+margin_right = 88.0
+margin_bottom = 180.545
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_up2" type="Button" parent="."]
+margin_left = 112.0
+margin_top = 156.545
+margin_right = 136.0
+margin_bottom = 180.545
+text = "+"
+
+[node name="icon3" type="Sprite" parent="."]
+position = Vector2( 40, 229.725 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 197.725
+margin_right = 91.0
+margin_bottom = 211.725
+text = "Esferita"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_unit3" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 213.725
+margin_right = 112.0
+margin_bottom = 237.725
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_less3" type="Button" parent="."]
+margin_left = 64.0
+margin_top = 213.725
+margin_right = 88.0
+margin_bottom = 237.725
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_up3" type="Button" parent="."]
+margin_left = 112.0
+margin_top = 213.725
+margin_right = 136.0
+margin_bottom = 237.725
+text = "+"
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = 24.0
 margin_top = 48.0
@@ -80,10 +170,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 200.0
-margin_top = 96.0
-margin_right = 296.0
-margin_bottom = 128.0
+margin_left = 35.1843
+margin_top = 275.111
+margin_right = 131.184
+margin_bottom = 307.111
 text = "Atacar"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,4 +181,8 @@ __meta__ = {
 
 [connection signal="pressed" from="Button_less" to="." method="_on_Button_less_pressed"]
 [connection signal="pressed" from="Button_up" to="." method="_on_Button_up_pressed"]
+[connection signal="pressed" from="Button_less2" to="." method="_on_Button_less2_pressed"]
+[connection signal="pressed" from="Button_up2" to="." method="_on_Button_up2_pressed"]
+[connection signal="pressed" from="Button_less3" to="." method="_on_Button_less3_pressed"]
+[connection signal="pressed" from="Button_up3" to="." method="_on_Button_up3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -14,6 +14,10 @@ config/name="bug_rush_prototype"
 run/main_scene="res://lvls/dev_lvl_combat.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+UNIT_STATS="*res://script/globals/UNIT_CLASESS.gd"
+
 [input]
 
 cam_zoom_in={

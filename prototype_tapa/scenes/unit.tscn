@@ -1,16 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/HealthBarr3D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/unit.gd" type="Script" id=2]
+[ext_resource path="res://assets/materials/unit_material_base.tres" type="Material" id=3]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 height = 0.154275
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0, 0.717647, 1, 1 )
+[sub_resource type="PrismMesh" id=3]
+material = ExtResource( 3 )
 
-[sub_resource type="PrismMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="CubeMesh" id=4]
+material = ExtResource( 3 )
+
+[sub_resource type="SphereMesh" id=5]
+material = ExtResource( 3 )
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -20,12 +24,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 1.58933e-08, 1.58933e-08, -1.58933e-08, -4.37114e-08, 1, 1.58933e-08, -1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 2 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( -1, 8.74227e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74227e-08, -1, 4.37114e-08, 0, 0, 0 )
-mesh = SubResource( 4 )
-material/0 = null
+shape = SubResource( 1 )
 
 [node name="HealthBarr3D" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20875, 0 )
@@ -37,4 +36,23 @@ cast_to = Vector3( 2, 0, 0 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Mallas" type="Spatial" parent="."]
+
+[node name="Triangulo" type="MeshInstance" parent="Mallas"]
+transform = Transform( -1, 8.74227e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74227e-08, -1, 4.37114e-08, 0, 0, 0 )
+visible = false
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Cubo" type="MeshInstance" parent="Mallas"]
+visible = false
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Esfera" type="MeshInstance" parent="Mallas"]
+visible = false
+mesh = SubResource( 5 )
+material/0 = null
+
+[connection signal="script_changed" from="." to="." method="_on_KinematicBody_script_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
