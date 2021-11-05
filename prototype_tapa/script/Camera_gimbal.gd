@@ -7,12 +7,10 @@ export (float, 0.0, 2.0) var rotation_speed = PI/2
 # Nodos:
 onready var camera = get_node('InnerGimbal/Camera')
 
-
 # Variables del Raycast
 var rayOrigin 
 var rayEnd
 var ray_length: float = 2000
-
 
 # mouse properties
 
