@@ -41,7 +41,8 @@ func _physics_process(delta):
 		if ready_to_hit and temp.is_in_group("enemy"):
 			temp.hurt(damage)
 			ready_to_hit = false
-			#si es esfera explota
+			if clase == UNIT_STATS.classes.esfera:
+				queue_free()
 			$Timer.start()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
@@ -69,6 +70,7 @@ func set_stats(	_value) -> void:
 	damage 		 = _value["Damage"]
 	armor		 = _value["Armor"]
 	speed		 = _value["Speed"]
+	clase		 = _value["Type"]
 	match _value["Type"]:
 		UNIT_STATS.classes.triangulo:
 			$Mallas/Triangulo.visible = true
