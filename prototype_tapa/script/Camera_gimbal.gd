@@ -4,6 +4,16 @@ export (NodePath) var target
 
 export (float, 0.0, 2.0) var rotation_speed = PI/2
 
+# Nodos:
+onready var camera = get_node('InnerGimbal/Camera')
+
+
+# Variables del Raycast
+var rayOrigin 
+var rayEnd
+var ray_length: float = 2000
+
+
 # mouse properties
 
 export (bool) var mouse_control = false
@@ -18,8 +28,24 @@ export (float) var min_zoom = 0.4
 export (float, 0.05, 2) var zoom_speed = 0.09
 
 var zoom = 10
+var camera_pos: Vector3 = Vector3()
+var move_enable: bool = true
+var lerp_speed: float = 5
 
 func _unhandled_input(event):
+	if event is InputEventMouseButton and event.is_action_pressed('left_click'):
+		# En esta parte se detecta las entidades en el espacio 3D cuando 
+		# se le hacen click.
+		var spaces_state = get_world().direct_space_state
+		var mouse_position = get_viewport().get_mouse_position()
+		rayOrigin = camera.project_ray_origin(mouse_position)
+		rayEnd = rayOrigin + camera.project_ray_normal(mouse_position) * ray_length
+		var intersection = spaces_state.intersect_ray(rayOrigin,rayEnd,[],
+														0x7FFFFFFF,true,true)
+		if intersection.size() != 0:
+			camera_pos = intersection.position
+#		print(intersection.position)
+
 #	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 #		return
 	if event.is_action_pressed('scroll_button'):
@@ -41,6 +67,7 @@ func _unhandled_input(event):
 			$InnerGimbal.rotate_object_local(Vector3.RIGHT, dir * y_rotation * mouse_sensitivity)
 
 func get_input_keyboard(delta):
+	
 	# Rotate outer gimbal around y axis
 	var y_rotation = 0
 	if Input.is_action_pressed("cam_right"):
@@ -63,5 +90,8 @@ func _process(delta):
 		get_input_keyboard(delta)
 	$InnerGimbal.rotation.x = clamp($InnerGimbal.rotation.x, -1.4, -0.01)
 	scale = lerp(scale, Vector3.ONE * zoom, zoom_speed)
-	if target:
-		global_transform.origin = get_node(target).global_transform.origin
+#	if target:
+#		global_transform.origin = get_node(target).global_transform.origin
+	if move_enable:
+		translation = translation.linear_interpolate(camera_pos, \
+													lerp_speed * delta)

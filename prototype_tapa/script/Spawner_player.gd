@@ -14,19 +14,19 @@ func spawn_units(_army) -> void:
 
 	#Spawn_Triangulo
 	if unit_triangulito != 0:
-		for i in range(unit_triangulito):
+		for _i in range(unit_triangulito):
 			get_parent().add_child(spawn(UNIT_STATS.triangulo))
 
 	#Spawn_Cubo
 	var unit_cubito = _army["cubitos"]
 	if unit_cubito != 0:
-		for i in range(unit_cubito):
+		for _i in range(unit_cubito):
 			get_parent().add_child(spawn(UNIT_STATS.cubo))
 
 	#Spawn_Esfera
 	var unit_esferita = _army["esferitas"]
 	if unit_esferita != 0:
-		for i in range(unit_esferita):
+		for _i in range(unit_esferita):
 			get_parent().add_child(spawn(UNIT_STATS.esfera))
 	emit_signal('attack_start')
 

@@ -8,7 +8,7 @@ var esferitas: 		int = 0
 signal spawn_units(army)
 
 func _ready() -> void:
-	popup()
+	pass
 
 func _on_Button_less_pressed() -> void:
 	if recursos < 10 and triangulito > 0:

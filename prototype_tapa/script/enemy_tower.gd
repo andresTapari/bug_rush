@@ -18,7 +18,7 @@ onready var BULLET = preload('res://scenes/bullet.tscn')
 func _ready() -> void:
 	pass # Replace with function body.
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !targets_to_attack.empty():
 		if !is_instance_valid(targets_to_attack[0]):
 			targets_to_attack.remove(0)
