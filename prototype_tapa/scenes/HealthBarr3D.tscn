@@ -9,7 +9,6 @@ viewport_path = NodePath("Viewport")
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Viewport" type="Viewport" parent="."]
-arvr = true
 size = Vector2( 200, 40 )
 transparent_bg = true
 
