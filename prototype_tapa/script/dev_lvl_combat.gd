@@ -8,6 +8,8 @@ func _ready() -> void:
 	
 func set_targets()-> void:
 	var nodos:Array = get_children() 
+	player_units.clear()
+	enemy_units.clear()
 	for element in nodos:
 		if element.is_in_group("player"):
 			player_units.push_front(element)

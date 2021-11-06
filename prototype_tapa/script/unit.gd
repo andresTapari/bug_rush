@@ -35,6 +35,7 @@ func _physics_process(delta):
 		if transform.origin.distance_to(target_pos) < 1.5:
 			target = null
 			velocity = Vector3.ZERO
+
 	#Si puede atacar
 	if ray_cast.is_colliding():
 		var temp = ray_cast.get_collider()
@@ -86,10 +87,3 @@ func set_targets_to_attack(_value: Array) -> void:
 
 func _on_Timer_timeout() -> void:
 	ready_to_hit = true
-
-
-func _on_KinematicBody_script_changed() -> void:
-	#solo para debug:
-	#actualiza los stats cuando ocurre un cambio en el script, 
-	print("Se cambio el script")
-	pass # Replace with function body.

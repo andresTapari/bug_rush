@@ -54,4 +54,3 @@ zoom = 7.0
 
 [node name="Spawner" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79934, 1.26164, -9.25345 )
-gold = 10
