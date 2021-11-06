@@ -46,7 +46,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9842, 1, 6.58897 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -12.411 )
 
 [node name="StaticBody6" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56459, 1, -12.411 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158005, 1, -12.411 )
 
 [node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
 zoom_speed = 0.35

@@ -13,6 +13,7 @@ func set_targets()-> void:
 	for element in nodos:
 		if element.is_in_group("player"):
 			player_units.push_front(element)
+			
 
 		if element.is_in_group("enemy"):
 			enemy_units.push_front(element)

@@ -7,25 +7,25 @@ enum classes {	triangulo, 	#0
 
 # Definición de unidades:
 var triangulo = {"Type": classes.triangulo,
-				 "Health": 15,
+				 "Health": 10,
 				 "Damage": 2,
 				 "Armor": 5,
 				 "Speed":5,
-				 "Cost": 1
+				 "price":1
 				}
 
-var cubo = 		{"Type": classes.cubo,
-				"Health": 20,
+var cubo = 		{"Type": classes.cubo
+				,"Health": 40,
 				"Damage": 1, 
 				"Armor": 5, 
-				"Speed": 2.5,
-				"Cost": 2
-				 }
+				"Speed": 3,
+				"price":2 
+				}
 
 var esfera = 	{"Type": classes.esfera,
 				 "Health": 5,
-				 "Damage": 10,
+				 "Damage": 7,
 				 "Armor": 0,
-				 "Speed":7.5,
-				 "Cost": 3
+				 "Speed": 6,
+				 "price":1
 				}

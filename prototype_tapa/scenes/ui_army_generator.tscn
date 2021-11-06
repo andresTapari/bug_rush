@@ -4,6 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="army_generator" type="WindowDialog"]
+visible = true
 margin_top = -2.0
 margin_right = 320.0
 margin_bottom = 325.0
@@ -14,153 +15,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 40, 112 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+[node name="gd" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 24.0
-margin_right = 132.0
-margin_bottom = 38.0
+[node name="Label" type="Label" parent="gd"]
+margin_right = 280.0
+margin_bottom = 14.0
 text = "Arma tu ejercito:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 80.0
-margin_right = 91.0
-margin_bottom = 94.0
-text = "Triangulito"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label_unit" type="Label" parent="."]
-margin_left = 88.0
-margin_top = 96.0
-margin_right = 112.0
-margin_bottom = 120.0
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_less" type="Button" parent="."]
-margin_left = 64.0
-margin_top = 96.0
-margin_right = 88.0
-margin_bottom = 120.0
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_up" type="Button" parent="."]
-margin_left = 112.0
-margin_top = 96.0
-margin_right = 136.0
-margin_bottom = 120.0
-text = "+"
-
-[node name="icon2" type="Sprite" parent="."]
-position = Vector2( 40, 172.545 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="Label3" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 140.545
-margin_right = 91.0
-margin_bottom = 154.545
-text = "Cubito"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label_unit2" type="Label" parent="."]
-margin_left = 88.0
-margin_top = 156.545
-margin_right = 112.0
-margin_bottom = 180.545
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_less2" type="Button" parent="."]
-margin_left = 64.0
-margin_top = 156.545
-margin_right = 88.0
-margin_bottom = 180.545
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_up2" type="Button" parent="."]
-margin_left = 112.0
-margin_top = 156.545
-margin_right = 136.0
-margin_bottom = 180.545
-text = "+"
-
-[node name="icon3" type="Sprite" parent="."]
-position = Vector2( 40, 229.725 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
-
-[node name="Label4" type="Label" parent="."]
-margin_left = 24.0
-margin_top = 197.725
-margin_right = 91.0
-margin_bottom = 211.725
-text = "Esferita"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label_unit3" type="Label" parent="."]
-margin_left = 88.0
-margin_top = 213.725
-margin_right = 112.0
-margin_bottom = 237.725
-text = "0"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_less3" type="Button" parent="."]
-margin_left = 64.0
-margin_top = 213.725
-margin_right = 88.0
-margin_bottom = 237.725
-text = "-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button_up3" type="Button" parent="."]
-margin_left = 112.0
-margin_top = 213.725
-margin_right = 136.0
-margin_bottom = 237.725
-text = "+"
-
-[node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = 24.0
-margin_top = 48.0
-margin_right = 296.0
-margin_bottom = 72.0
+[node name="ProgressBar" type="ProgressBar" parent="gd"]
+margin_top = 18.0
+margin_right = 280.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
 max_value = 10.0
 step = 1.0
 value = 10.0
@@ -168,20 +47,311 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-margin_left = 35.1843
-margin_top = 275.111
-margin_right = 131.184
-margin_bottom = 307.111
+[node name="space" type="Label" parent="gd"]
+margin_top = 36.0
+margin_right = 280.0
+margin_bottom = 50.0
+
+[node name="space2" type="Label" parent="gd"]
+margin_top = 54.0
+margin_right = 280.0
+margin_bottom = 68.0
+
+[node name="name1" type="Label" parent="gd"]
+margin_top = 72.0
+margin_right = 280.0
+margin_bottom = 86.0
+text = "Triangulito"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gdTriangulo" type="GridContainer" parent="gd"]
+margin_top = 90.0
+margin_right = 280.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+columns = 8
+
+[node name="icoContainer" type="GridContainer" parent="gd/gdTriangulo"]
+margin_right = 48.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="icon" type="Sprite" parent="gd/gdTriangulo/icoContainer"]
+position = Vector2( 19, 15 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Button_less" type="Button" parent="gd/gdTriangulo"]
+margin_left = 52.0
+margin_right = 82.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_unit" type="Label" parent="gd/gdTriangulo"]
+margin_left = 86.0
+margin_top = 8.0
+margin_right = 94.0
+margin_bottom = 22.0
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_up" type="Button" parent="gd/gdTriangulo"]
+margin_left = 98.0
+margin_right = 128.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelD" type="Label" parent="gd/gdTriangulo"]
+margin_left = 132.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 22.0
+text = "       Delay:"
+
+[node name="Delay" type="Label" parent="gd/gdTriangulo"]
+margin_left = 204.0
+margin_top = 8.0
+margin_right = 212.0
+margin_bottom = 22.0
+text = "0"
+
+[node name="ButtonD_less" type="Button" parent="gd/gdTriangulo"]
+margin_left = 216.0
+margin_right = 246.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonD_up" type="Button" parent="gd/gdTriangulo"]
+margin_left = 250.0
+margin_right = 280.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name2" type="Label" parent="gd"]
+margin_top = 124.0
+margin_right = 280.0
+margin_bottom = 138.0
+text = "Cubito"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gdCubo" type="GridContainer" parent="gd"]
+margin_top = 142.0
+margin_right = 280.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+columns = 8
+
+[node name="icoContainer" type="GridContainer" parent="gd/gdCubo"]
+margin_right = 48.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="icon" type="Sprite" parent="gd/gdCubo/icoContainer"]
+position = Vector2( 19, 15 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Button_less" type="Button" parent="gd/gdCubo"]
+margin_left = 52.0
+margin_right = 82.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_unit" type="Label" parent="gd/gdCubo"]
+margin_left = 86.0
+margin_top = 8.0
+margin_right = 94.0
+margin_bottom = 22.0
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_up" type="Button" parent="gd/gdCubo"]
+margin_left = 98.0
+margin_right = 128.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+
+[node name="LabelD" type="Label" parent="gd/gdCubo"]
+margin_left = 132.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 22.0
+text = "       Delay:"
+
+[node name="Delay" type="Label" parent="gd/gdCubo"]
+margin_left = 204.0
+margin_top = 8.0
+margin_right = 212.0
+margin_bottom = 22.0
+text = "0"
+
+[node name="ButtonD_less2" type="Button" parent="gd/gdCubo"]
+margin_left = 216.0
+margin_right = 246.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonD_up2" type="Button" parent="gd/gdCubo"]
+margin_left = 250.0
+margin_right = 280.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name3" type="Label" parent="gd"]
+margin_top = 176.0
+margin_right = 280.0
+margin_bottom = 190.0
+text = "Esferita"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gdEsfera" type="GridContainer" parent="gd"]
+margin_top = 194.0
+margin_right = 280.0
+margin_bottom = 224.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+columns = 8
+
+[node name="icoContainer" type="GridContainer" parent="gd/gdEsfera"]
+margin_right = 48.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="icon" type="Sprite" parent="gd/gdEsfera/icoContainer"]
+position = Vector2( 19, 15 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Button_less" type="Button" parent="gd/gdEsfera"]
+margin_left = 52.0
+margin_right = 82.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_unit" type="Label" parent="gd/gdEsfera"]
+margin_left = 86.0
+margin_top = 8.0
+margin_right = 94.0
+margin_bottom = 22.0
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_up" type="Button" parent="gd/gdEsfera"]
+margin_left = 98.0
+margin_right = 128.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+
+[node name="LabelD" type="Label" parent="gd/gdEsfera"]
+margin_left = 132.0
+margin_top = 8.0
+margin_right = 200.0
+margin_bottom = 22.0
+text = "       Delay:"
+
+[node name="Delay" type="Label" parent="gd/gdEsfera"]
+margin_left = 204.0
+margin_top = 8.0
+margin_right = 212.0
+margin_bottom = 22.0
+text = "0"
+
+[node name="ButtonD_less3" type="Button" parent="gd/gdEsfera"]
+margin_left = 216.0
+margin_right = 246.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonD_up3" type="Button" parent="gd/gdEsfera"]
+margin_left = 250.0
+margin_right = 280.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 30, 30 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="gd"]
+margin_top = 228.0
+margin_right = 280.0
+margin_bottom = 248.0
 text = "Atacar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Button_less" to="." method="_on_Button_less_pressed"]
-[connection signal="pressed" from="Button_up" to="." method="_on_Button_up_pressed"]
-[connection signal="pressed" from="Button_less2" to="." method="_on_Button_less2_pressed"]
-[connection signal="pressed" from="Button_up2" to="." method="_on_Button_up2_pressed"]
-[connection signal="pressed" from="Button_less3" to="." method="_on_Button_less3_pressed"]
-[connection signal="pressed" from="Button_up3" to="." method="_on_Button_up3_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="gd/gdTriangulo/Button_less" to="." method="_on_Button_less_pressed"]
+[connection signal="pressed" from="gd/gdTriangulo/Button_up" to="." method="_on_Button_up_pressed"]
+[connection signal="pressed" from="gd/gdTriangulo/ButtonD_less" to="." method="_on_ButtonD_less_pressed"]
+[connection signal="pressed" from="gd/gdTriangulo/ButtonD_up" to="." method="_on_ButtonD_up_pressed"]
+[connection signal="pressed" from="gd/gdCubo/Button_less" to="." method="_on_Button_less2_pressed"]
+[connection signal="pressed" from="gd/gdCubo/Button_up" to="." method="_on_Button_up2_pressed"]
+[connection signal="pressed" from="gd/gdCubo/ButtonD_less2" to="." method="_on_ButtonD_less2_pressed"]
+[connection signal="pressed" from="gd/gdCubo/ButtonD_up2" to="." method="_on_ButtonD_up2_pressed"]
+[connection signal="pressed" from="gd/gdEsfera/Button_less" to="." method="_on_Button_less3_pressed"]
+[connection signal="pressed" from="gd/gdEsfera/Button_up" to="." method="_on_Button_up3_pressed"]
+[connection signal="pressed" from="gd/gdEsfera/ButtonD_less3" to="." method="_on_ButtonD_less3_pressed"]
+[connection signal="pressed" from="gd/gdEsfera/ButtonD_up3" to="." method="_on_ButtonD_up3_pressed"]
+[connection signal="pressed" from="gd/Button" to="." method="_on_Button_pressed"]
