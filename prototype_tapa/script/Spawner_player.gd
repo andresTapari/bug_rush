@@ -18,6 +18,7 @@ var unit_3: int =0
 
 func _ready() -> void:
 	$army_generator.popup()
+# warning-ignore:return_value_discarded
 	$army_generator.connect("spawn_units",self,"spawn_units")
 
 #Funciones:
@@ -45,20 +46,20 @@ func spawn_units(_army) -> void:
 		timer_unit_3.wait_time = _army["unit_3_delay"]
 		timer_unit_3.start()
 	elif unit_3 !=0:
-		spawn_unit_2_type()
+		spawn_unit_3_type()
 	emit_signal('attack_start')
 
 func spawn_unit_1_type() -> void:
-	for _i in range(unit_2):
-		get_parent().add_child(spawn(UNIT_STATS.cubo))
+	for _i in range(unit_1):
+		get_parent().add_child(spawn(UNIT_STATS.unit_type_1))
 
 func spawn_unit_2_type() -> void:
-	for _i in range(unit_1):
-		get_parent().add_child(spawn(UNIT_STATS.triangulo))
+	for _i in range(unit_2):
+		get_parent().add_child(spawn(UNIT_STATS.unit_type_2))
 
 func spawn_unit_3_type() -> void:
-		for _i in range(unit_3):
-			get_parent().add_child(spawn(UNIT_STATS.esfera))
+	for _i in range(unit_3):
+		get_parent().add_child(spawn(UNIT_STATS.unit_type_3))
 
 func spawn(_stats) -> Node:
 	var rng = RandomNumberGenerator.new()
@@ -66,9 +67,9 @@ func spawn(_stats) -> Node:
 	var u = UNIT.instance()
 	u.set_stats(_stats)
 	u.transform = $Position3D.global_transform
-	u.translation += Vector3(rng.randi_range(-2, 2),
+	u.translation += Vector3(rng.randf_range(-2, 2),
 							 0,
-							 rng.randi_range(-2, 2))
+							 rng.randf_range(-2, 2))
 	return u
 
 # Señales:

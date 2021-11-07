@@ -1,9 +1,12 @@
 #tool
 extends KinematicBody
 
+#Nodos:
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var ray_cast 	= get_node('RayCast')
+onready var tween		= get_node('Tween')
 
+#Variables:
 export var speed: float	 	    	= 5
 export var gravity: float 	    	= -5
 export var total_health: float  	= 10
@@ -20,7 +23,10 @@ var target_pos: Vector3 		= Vector3()
 var ready_to_hit: bool 			= true
 
 func _ready() -> void:
-	pass
+	#Ajuste de cajas de colision
+	tween.interpolate_property($CollisionShape.get_shape(),"radius",0.01,1,5,
+								Tween.TRANS_LINEAR,Tween.EASE_IN_OUT,0)
+	tween.start()
 
 func _physics_process(delta):
 	if !targets_to_attack.empty():
@@ -41,7 +47,7 @@ func _physics_process(delta):
 		if ready_to_hit and temp.is_in_group("enemy"):
 			temp.hurt(damage)
 			ready_to_hit = false
-			if clase == UNIT_STATS.classes.esfera:
+			if clase == UNIT_STATS.classes.unit_type_3:
 				queue_free()
 			$Timer.start()
 	velocity.y += gravity * delta
@@ -55,6 +61,7 @@ func hurt(_damage: float) -> void:
 		queue_free()
 
 func get_nearest_target():
+# warning-ignore:shadowed_variable
 	var target_to_move = targets_to_attack[0]
 	var dist_to_target_to_move = target_to_move.translation.distance_to(self.translation)
 	for element in targets_to_attack:
@@ -72,12 +79,12 @@ func set_stats(	_value) -> void:
 	speed		 = _value["Speed"]
 	clase		 = _value["Type"]
 	match _value["Type"]:
-		UNIT_STATS.classes.triangulo:
-			$Mallas/Triangulo.visible = true
-		UNIT_STATS.classes.cubo:
-			$Mallas/Cubo.visible = true
-		UNIT_STATS.classes.esfera:
-			$Mallas/Esfera.visible = true
+		UNIT_STATS.classes.unit_type_1:
+			$Mesh/unit_type_1.visible = true
+		UNIT_STATS.classes.unit_type_2:
+			$Mesh/unit_type_2.visible = true
+		UNIT_STATS.classes.unit_type_3:
+			$Mesh/unit_type_3.visible = true
 
 func set_targets_to_attack(_value: Array) -> void:
 	targets_to_attack = _value
@@ -86,10 +93,3 @@ func set_targets_to_attack(_value: Array) -> void:
 
 func _on_Timer_timeout() -> void:
 	ready_to_hit = true
-
-
-func _on_KinematicBody_script_changed() -> void:
-	#solo para debug:
-	#actualiza los stats cuando ocurre un cambio en el script, 
-	print("Se cambio el script")
-	pass # Replace with function body.

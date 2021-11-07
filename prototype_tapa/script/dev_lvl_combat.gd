@@ -4,6 +4,7 @@ var player_units: Array = []
 var enemy_units: Array 	= []
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	$Spawner.connect("attack_start",self,"set_targets")
 	
 func set_targets()-> void:

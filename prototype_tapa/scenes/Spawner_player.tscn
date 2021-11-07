@@ -40,7 +40,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.884291, 0 )
 shape = SubResource( 3 )
 
 [node name="Timer_1" type="Timer" parent="."]
-one_shot = true
 
 [node name="Timer_2" type="Timer" parent="."]
 one_shot = true
