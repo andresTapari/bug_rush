@@ -8,18 +8,19 @@ onready var timer_unit_1 = get_node("Timer_1")
 onready var timer_unit_2 = get_node("Timer_2")
 onready var timer_unit_3 = get_node("Timer_3")
 
-#Cantidad de unidades a genera:
+#Escenas:
+onready var UNIT = preload('res://scenes/unit.tscn')
+
+#Cantidad de unidades a generar:
 var unit_1: int =0
 var unit_2: int =0
 var unit_3: int =0
-
-# Called when the node enters the scene tree for the first time.
-onready var UNIT = preload('res://scenes/unit.tscn')
 
 func _ready() -> void:
 	$army_generator.popup()
 	$army_generator.connect("spawn_units",self,"spawn_units")
 
+#Funciones:
 func spawn_units(_army) -> void:
 	unit_1 = _army["unit_1"]
 	unit_2 = _army["unit_2"]
@@ -27,22 +28,25 @@ func spawn_units(_army) -> void:
 	
 	#Unit 1:
 	if unit_1 !=0 and _army["unit_1_delay"] != 0:
-		$TimerCirculo.wait_time = _army["unit_1_delay"]
-		$TimerCirculo.start()
+		timer_unit_1.wait_time = _army["unit_1_delay"]
+		timer_unit_1.start()
 	elif unit_1 != 0:
 		spawn_unit_1_type()
 	
 	#Unit 2:
 	if unit_2 !=0 and _army["unit_2_delay"] != 0:
-		$TimerCirculo.wait_time = _army["unit_2_delay"]
-		$TimerCirculo.start()
-	elif unit_1 != 0:
+		timer_unit_2.wait_time = _army["unit_2_delay"]
+		timer_unit_2.start()
+	elif unit_2 != 0:
 		spawn_unit_2_type()
-		
-	if unit_3 !=0:
-		$TimerTriangulo.wait_time=_army["unit_3_delay"]
-		$TimerTriangulo.start()
 
+	#Unit 3:
+	if unit_3 !=0 and _army["unit_3_delay"] != 0:
+		timer_unit_3.wait_time = _army["unit_3_delay"]
+		timer_unit_3.start()
+	elif unit_3 !=0:
+		spawn_unit_2_type()
+	emit_signal('attack_start')
 
 func spawn_unit_1_type() -> void:
 	for _i in range(unit_2):
@@ -67,14 +71,15 @@ func spawn(_stats) -> Node:
 							 rng.randi_range(-2, 2))
 	return u
 
-func _on_TimerTriangulo_timeout():
-	spawn_unit_2_type()
-	emit_signal('attack_start')
-
-func _on_TimerCuadrado_timeout():
+# Señales:
+func _on_Timer_1_timeout() -> void:
 	spawn_unit_1_type()
 	emit_signal('attack_start')
 
-func _on_TimerCirculo_timeout():
+func _on_Timer_2_timeout() -> void:
+	spawn_unit_2_type()
+	emit_signal('attack_start')
+
+func _on_Timer_3_timeout() -> void:
 	spawn_unit_3_type()
 	emit_signal('attack_start')

@@ -48,6 +48,6 @@ one_shot = true
 [node name="Timer_3" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="Timer_1" to="." method="_on_TimerTriangulo_timeout"]
-[connection signal="timeout" from="Timer_2" to="." method="_on_TimerCuadrado_timeout"]
-[connection signal="timeout" from="Timer_3" to="." method="_on_TimerCirculo_timeout"]
+[connection signal="timeout" from="Timer_1" to="." method="_on_Timer_1_timeout"]
+[connection signal="timeout" from="Timer_2" to="." method="_on_Timer_2_timeout"]
+[connection signal="timeout" from="Timer_3" to="." method="_on_Timer_3_timeout"]
