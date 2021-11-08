@@ -43,7 +43,7 @@ var unit_type_3 = 	{
 var enemy_type_1 = {
 					"Type": classes.enemy_type_1,
 					"Name": "Enemy Fence",
-					"Health": 10,
+					"Health": 15,
 					"Damage": 0,
 					"Armor": 5,
 					"Speed": 0,

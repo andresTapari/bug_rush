@@ -21,7 +21,8 @@ func _ready() -> void:
 	damage = UNIT_STATS.enemy_type_1["Damage"]
 	fire_rate = UNIT_STATS.enemy_type_1["FR"]
 	armor = UNIT_STATS.enemy_type_1["Armor"]
-
+	actual_health = total_health
+	
 #Funciones
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage

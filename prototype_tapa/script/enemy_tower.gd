@@ -28,6 +28,7 @@ func _ready() -> void:
 	damage = UNIT_STATS.enemy_type_2["Damage"]
 	fire_rate = UNIT_STATS.enemy_type_2["FR"]
 	armor = UNIT_STATS.enemy_type_2["Armor"]
+	actual_health = total_health
 	$Timer.wait_time = fire_rate
 	
 func _process(_delta: float) -> void:
