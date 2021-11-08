@@ -42,7 +42,6 @@ shape = SubResource( 3 )
 [node name="Timer_1" type="Timer" parent="."]
 
 [node name="Timer_2" type="Timer" parent="."]
-one_shot = true
 
 [node name="Timer_3" type="Timer" parent="."]
 one_shot = true
