@@ -49,6 +49,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9842, 1, -12.411 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0158005, 1, -12.411 )
 
 [node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
 zoom_speed = 0.35
 zoom = 7.0
 
