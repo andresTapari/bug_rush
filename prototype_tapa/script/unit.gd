@@ -24,8 +24,11 @@ var ready_to_hit: bool 			= true
 
 func _ready() -> void:
 	#Ajuste de cajas de colision
-	tween.interpolate_property($CollisionShape.get_shape(),"radius",0.01,1,5,
-								Tween.TRANS_LINEAR,Tween.EASE_IN_OUT,0)
+	tween.interpolate_property($CollisionShape.get_shape(),
+								"radius", 0.01, 1, 1,
+								Tween.TRANS_LINEAR,
+								Tween.EASE_IN_OUT,
+								0)
 	tween.start()
 
 func _physics_process(delta):
@@ -73,11 +76,12 @@ func get_nearest_target():
 	
 # Funciones set&get:
 func set_stats(	_value) -> void:
-	total_health = _value["Health"]
-	damage 		 = _value["Damage"]
-	armor		 = _value["Armor"]
-	speed		 = _value["Speed"]
-	clase		 = _value["Type"]
+	total_health  = _value["Health"]
+	damage 		  = _value["Damage"]
+	armor		  = _value["Armor"]
+	speed		  = _value["Speed"]
+	clase		  = _value["Type"]
+	actual_health = total_health
 	match _value["Type"]:
 		UNIT_STATS.classes.unit_type_1:
 			$Mesh/unit_type_1.visible = true

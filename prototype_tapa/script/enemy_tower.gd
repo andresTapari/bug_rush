@@ -4,10 +4,16 @@ extends StaticBody
 var targets_to_attack: Array = []
 var weapon_enable: bool = true
 
-signal tower_destroyed(value)
+signal enemy_unit_destroyed(value)
 
-export var total_health = 10
+#variables
+var type
+var u_name: String
+var total_health :float
 var actual_health = total_health
+var damage : float
+var fire_rate : float
+var armor : float
 
 onready var draw   = get_node('Muzzle/Draw')
 onready var muzzle = get_node('Muzzle')
@@ -16,8 +22,14 @@ onready var HealthBarr = get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var BULLET = preload('res://scenes/bullet.tscn')
 
 func _ready() -> void:
-	pass # Replace with function body.
-
+	type = UNIT_STATS.enemy_type_2["Type"]
+	u_name = UNIT_STATS.enemy_type_2["Name"]
+	total_health = UNIT_STATS.enemy_type_2["Health"]
+	damage = UNIT_STATS.enemy_type_2["Damage"]
+	fire_rate = UNIT_STATS.enemy_type_2["FR"]
+	armor = UNIT_STATS.enemy_type_2["Armor"]
+	$Timer.wait_time = fire_rate
+	
 func _process(_delta: float) -> void:
 	if !targets_to_attack.empty():
 		if !is_instance_valid(targets_to_attack[0]):
@@ -28,7 +40,7 @@ func _process(_delta: float) -> void:
 # Funciones:
 func attack_target(_target:Node) -> void:
 	muzzle.look_at(_target.translation,Vector3.UP)
-	draw_aim(_target)
+#	draw_aim(_target)
 	shoot()
 
 func draw_aim(_target:Node)->void:
@@ -39,10 +51,11 @@ func draw_aim(_target:Node)->void:
 	draw.add_vertex(Vector3(0,0,-dist)) #_target.translation
 	draw.end()
 
-func shoot():
+func shoot() -> void:
 	if weapon_enable:
 		weapon_enable = false
 		var b = BULLET.instance()
+		b.damage = damage
 		b.transform = get_node("Muzzle").global_transform
 		b.velocity = -b.transform.basis.z * -b.muzzle_velocity
 		get_parent().add_child(b)
@@ -52,7 +65,7 @@ func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
 	if actual_health <= 0:
-		emit_signal("tower_destroyed",self)
+		emit_signal("enemy_unit_destroyed",self)
 		queue_free()
 
 # Señales:

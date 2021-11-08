@@ -28,7 +28,7 @@ material/0 = null
 
 [node name="army_generator" parent="." instance=ExtResource( 2 )]
 margin_top = -1.0
-margin_bottom = 326.0
+margin_bottom = 291.0
 
 [node name="Position3D" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03372, 0 )
@@ -40,8 +40,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.884291, 0 )
 shape = SubResource( 3 )
 
 [node name="Timer_1" type="Timer" parent="."]
+one_shot = true
 
 [node name="Timer_2" type="Timer" parent="."]
+one_shot = true
 
 [node name="Timer_3" type="Timer" parent="."]
 one_shot = true

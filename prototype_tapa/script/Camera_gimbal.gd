@@ -1,11 +1,15 @@
 extends Spatial
 
-export (NodePath) var target
-
-export (float, 0.0, 2.0) var rotation_speed = PI/2
+# Scenes
+onready var UNIT_TABLE = preload('res://scenes/ui_unit_info.tscn')
 
 # Nodos:
 onready var camera = get_node('InnerGimbal/Camera')
+
+
+# Variables 
+export (NodePath) var target
+export (float, 0.0, 2.0) var rotation_speed = PI/2
 
 # Variables del Raycast
 var rayOrigin 
@@ -30,6 +34,7 @@ export (float, 0.4, 10) var zoom = 5
 var camera_pos: Vector3 = Vector3()
 var move_enable: bool = true
 var lerp_speed: float = 5
+var unit_table: Control
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.is_action_pressed('left_click'):
@@ -41,9 +46,18 @@ func _unhandled_input(event):
 		rayEnd = rayOrigin + camera.project_ray_normal(mouse_position) * ray_length
 		var intersection = spaces_state.intersect_ray(rayOrigin,rayEnd,[],
 														0x7FFFFFFF,true,true)
+		#Movimiento de camara hacia el click:
 		if intersection.size() != 0:
 			camera_pos = intersection.position
-#		print(intersection.position)
+			# Tabla de informacion:
+			if is_instance_valid(unit_table):
+				unit_table.queue_free()
+			if intersection.collider.is_in_group("unit"):
+				unit_table = UNIT_TABLE.instance()
+				unit_table.set_parameters(camera,intersection.collider)
+				get_parent().add_child(unit_table)
+			
+			
 
 #	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 #		return
