@@ -7,7 +7,8 @@ var bar_yellow 	= preload("res://assets/texture/health_barr/barHorizontal_yellow
 func _ready() -> void:
 	hide()
 
-func update_bar(amount, full) -> void:
+func update_bar(amount : float, full : float) -> void:
+	max_value = full
 	if amount < full:
 		show()
 	texture_progress = bar_green

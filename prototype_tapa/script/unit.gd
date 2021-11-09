@@ -1,6 +1,9 @@
 #tool
 extends KinematicBody
 
+#Señales:
+signal player_unit_destroyed(_value)
+
 #Nodos:
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var ray_cast 	= get_node('RayCast')
@@ -61,6 +64,7 @@ func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
 	if actual_health <= 0:
+		emit_signal("player_unit_destroyed",self)
 		queue_free()
 
 func get_nearest_target():

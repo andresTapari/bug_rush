@@ -13,6 +13,7 @@ var unit_3_delay:	int = 0
 
 #Señales
 signal spawn_units(army)
+signal attack_started
 
 func _ready() -> void:
 	pass
@@ -29,7 +30,9 @@ func _on_Button_pressed() -> void:
 				"unit_3_delay": unit_3_delay
 			  }
 	emit_signal("spawn_units",army)
-	queue_free()
+	emit_signal("attack_started")
+	hide()
+#	queue_free()
 
 #Boton (-) unit_1
 func _on_Button_less_pressed() -> void:

@@ -6,9 +6,9 @@
 [node name="army_generator" type="WindowDialog"]
 margin_top = -2.0
 margin_right = 320.0
-margin_bottom = 325.0
+margin_bottom = 263.0
 popup_exclusive = true
-window_title = "Arma tu ejercito"
+window_title = "Prepara el ataque"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -51,24 +51,19 @@ margin_top = 36.0
 margin_right = 280.0
 margin_bottom = 50.0
 
-[node name="space2" type="Label" parent="gd"]
+[node name="name1" type="Label" parent="gd"]
 margin_top = 54.0
 margin_right = 280.0
 margin_bottom = 68.0
-
-[node name="name1" type="Label" parent="gd"]
-margin_top = 72.0
-margin_right = 280.0
-margin_bottom = 86.0
 text = "Triangulito"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="gdTriangulo" type="GridContainer" parent="gd"]
-margin_top = 90.0
+margin_top = 72.0
 margin_right = 280.0
-margin_bottom = 120.0
+margin_bottom = 102.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
 columns = 8
@@ -151,18 +146,18 @@ __meta__ = {
 }
 
 [node name="name2" type="Label" parent="gd"]
-margin_top = 124.0
+margin_top = 106.0
 margin_right = 280.0
-margin_bottom = 138.0
+margin_bottom = 120.0
 text = "Cubito"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="gdCubo" type="GridContainer" parent="gd"]
-margin_top = 142.0
+margin_top = 124.0
 margin_right = 280.0
-margin_bottom = 172.0
+margin_bottom = 154.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
 columns = 8
@@ -242,18 +237,18 @@ __meta__ = {
 }
 
 [node name="name3" type="Label" parent="gd"]
-margin_top = 176.0
+margin_top = 158.0
 margin_right = 280.0
-margin_bottom = 190.0
+margin_bottom = 172.0
 text = "Esferita"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="gdEsfera" type="GridContainer" parent="gd"]
-margin_top = 194.0
+margin_top = 176.0
 margin_right = 280.0
-margin_bottom = 224.0
+margin_bottom = 206.0
 rect_min_size = Vector2( 0, 30 )
 size_flags_horizontal = 3
 columns = 8
@@ -333,9 +328,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="gd"]
-margin_top = 228.0
+margin_top = 210.0
 margin_right = 280.0
-margin_bottom = 248.0
+margin_bottom = 230.0
 text = "Atacar"
 __meta__ = {
 "_edit_use_anchors_": false
