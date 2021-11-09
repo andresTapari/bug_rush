@@ -1,9 +1,12 @@
 extends CanvasLayer
 
+signal stop_round
+
 # nodos:
 onready var lvl_progress_barr = get_node('VBoxContainer/TextureProgress')
 onready var btn_prepare 	  = get_node('VBoxContainer/btn_preparar_ataque')
 onready var army_generator	  = get_node('army_generator')
+#onready var score_dialog	  = get_node("ui_score_dialog")
 
 var player_state: String = "preparar"
 # variables:
@@ -22,7 +25,7 @@ func _on_btn_preparar_ataque_pressed() -> void:
 	if player_state == "preparar":
 		army_generator.popup()
 	elif player_state == "atacando":
-#		menu de reiniciar o terminar
+		emit_signal("stop_round")
 		pass
 
 func handle_attack_started():

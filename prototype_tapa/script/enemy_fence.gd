@@ -10,17 +10,19 @@ var actual_health = total_health
 var damage : float
 var fire_rate : float
 var armor : float
+var score: int
 
 #Nodos:
 onready var HealthBarr = get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
 func _ready() -> void:
-	type = UNIT_STATS.enemy_type_1["Type"]
-	u_name = UNIT_STATS.enemy_type_1["Name"]
-	total_health = UNIT_STATS.enemy_type_1["Health"]
-	damage = UNIT_STATS.enemy_type_1["Damage"]
-	fire_rate = UNIT_STATS.enemy_type_1["FR"]
-	armor = UNIT_STATS.enemy_type_1["Armor"]
+	type 			= UNIT_STATS.enemy_type_1["Type"]
+	u_name	 		= UNIT_STATS.enemy_type_1["Name"]
+	total_health 	= UNIT_STATS.enemy_type_1["Health"]
+	damage 			= UNIT_STATS.enemy_type_1["Damage"]
+	fire_rate 		= UNIT_STATS.enemy_type_1["FR"]
+	armor 			= UNIT_STATS.enemy_type_1["Armor"]
+	score 			= UNIT_STATS.enemy_type_1["Score"]
 	actual_health = total_health
 	
 #Funciones

@@ -14,6 +14,7 @@ var actual_health = total_health
 var damage : float
 var fire_rate : float
 var armor : float
+var score: int
 
 onready var draw   = get_node('Muzzle/Draw')
 onready var muzzle = get_node('Muzzle')
@@ -22,12 +23,13 @@ onready var HealthBarr = get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var BULLET = preload('res://scenes/bullet.tscn')
 
 func _ready() -> void:
-	type = UNIT_STATS.enemy_type_2["Type"]
-	u_name = UNIT_STATS.enemy_type_2["Name"]
-	total_health = UNIT_STATS.enemy_type_2["Health"]
-	damage = UNIT_STATS.enemy_type_2["Damage"]
-	fire_rate = UNIT_STATS.enemy_type_2["FR"]
-	armor = UNIT_STATS.enemy_type_2["Armor"]
+	type 			= UNIT_STATS.enemy_type_2["Type"]
+	u_name	 		= UNIT_STATS.enemy_type_2["Name"]
+	total_health 	= UNIT_STATS.enemy_type_2["Health"]
+	damage 			= UNIT_STATS.enemy_type_2["Damage"]
+	fire_rate 		= UNIT_STATS.enemy_type_2["FR"]
+	armor 			= UNIT_STATS.enemy_type_2["Armor"]
+	score 			= UNIT_STATS.enemy_type_2["Score"]
 	actual_health = total_health
 	$Timer.wait_time = fire_rate
 	

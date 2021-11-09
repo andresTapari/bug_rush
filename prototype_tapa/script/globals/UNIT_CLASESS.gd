@@ -47,8 +47,9 @@ var enemy_type_1 = {
 					"Damage": 0,
 					"Armor": 5,
 					"Speed": 0,
-					"FR":0,
-					"price":0
+					"FR": 0,
+					"price": 0,
+					"Score": 50
 }
 
 #enemy tower
@@ -59,7 +60,8 @@ var enemy_type_2 = {
 					"Damage": 3,
 					"Armor": 0,
 					"Speed": 0,
-					"FR":1,
-					"price":0
+					"FR": 1,
+					"price": 0,
+					"Score": 200
 }
 
