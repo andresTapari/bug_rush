@@ -30,11 +30,12 @@ func _ready() -> void:
 	
 	# Determinamos cantidad de enemigos por nivel
 	var nodos:Array = get_children() 
-	var enemy_counter: float
+	var enemy_counter: float = 0
 	for element in nodos:
 		if element.is_in_group("enemy"):
 			enemy_units.push_front(element)
 			enemy_counter += 1 
+	#warning-ignore:narrowing_conversion
 	victory_condition = enemy_counter * (0.2) # 20% de unidades restantes
 	if victory_condition == 0:
 		victory_condition = 1

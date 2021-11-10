@@ -4,6 +4,9 @@ extends KinematicBody
 #Señales:
 signal player_unit_destroyed(_value)
 
+#Escenas:
+onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
+
 #Nodos:
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var ray_cast 	= get_node('RayCast')
@@ -64,6 +67,10 @@ func _physics_process(delta):
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
+	var h = HIT_COUNTER.instance()
+	h.set_damage(_damage)
+	h.transform = self.global_transform
+	get_parent().add_child(h)
 	if actual_health <= 0:
 		emit_signal("player_unit_destroyed",self)
 		queue_free()

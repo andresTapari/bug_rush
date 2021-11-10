@@ -1,12 +1,9 @@
-tool
 extends StaticBody
 
-var targets_to_attack: Array = []
-var weapon_enable: bool = true
-
+# Señales:
 signal enemy_unit_destroyed(value)
 
-#variables
+# Variables
 var type
 var u_name: String
 var total_health :float
@@ -15,12 +12,17 @@ var damage : float
 var fire_rate : float
 var armor : float
 var score: int
+var targets_to_attack: Array = []
+var weapon_enable: bool = true
 
-onready var draw   = get_node('Muzzle/Draw')
-onready var muzzle = get_node('Muzzle')
-onready var HealthBarr = get_node('HealthBarr3D/Viewport/HealthBarr2D')
+# Nodos:
+onready var draw   		= get_node('Muzzle/Draw')
+onready var muzzle 		= get_node('Muzzle')
+onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
+# Escenas:
 onready var BULLET = preload('res://scenes/bullet.tscn')
+onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
 
 func _ready() -> void:
 	type 			= UNIT_STATS.enemy_type_2["Type"]
@@ -67,6 +69,10 @@ func shoot() -> void:
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
+	var h = HIT_COUNTER.instance()
+	h.set_damage(_damage)
+	h.transform = self.global_transform
+	get_parent().add_child(h)
 	if actual_health <= 0:
 		emit_signal("enemy_unit_destroyed",self)
 		queue_free()

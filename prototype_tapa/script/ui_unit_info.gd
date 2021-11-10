@@ -3,7 +3,7 @@ extends Control
 var camera
 var target
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if camera and target != null:
 		if is_instance_valid(target):
 			self.rect_position=camera.unproject_position(target.translation)

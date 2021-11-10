@@ -42,4 +42,5 @@ func _on_Timer_Score_timeout():
 
 
 func _on_Button_redo_pressed():
+	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
