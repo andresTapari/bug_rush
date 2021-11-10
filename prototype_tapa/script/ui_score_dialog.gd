@@ -39,3 +39,7 @@ func _on_Timer_Score_timeout():
 	else:
 		$Timer_Score.stop()
 		$VBoxContainer/HBoxContainer2/Button_next_lvl.disabled = !victory_flag
+
+
+func _on_Button_redo_pressed():
+	get_tree().reload_current_scene()

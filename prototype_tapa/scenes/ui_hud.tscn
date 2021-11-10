@@ -40,10 +40,11 @@ script = ExtResource( 4 )
 [node name="Label" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -119.0
-margin_top = -1.41422
-margin_bottom = 12.5858
+margin_left = -156.0
+margin_bottom = 36.0
 text = "Menu / Pausa (Esc)"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

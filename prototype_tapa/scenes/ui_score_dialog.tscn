@@ -125,4 +125,5 @@ text = "Next Lvl"
 [node name="Timer_Score" type="Timer" parent="."]
 wait_time = 0.01
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button_redo" to="." method="_on_Button_redo_pressed"]
 [connection signal="timeout" from="Timer_Score" to="." method="_on_Timer_Score_timeout"]

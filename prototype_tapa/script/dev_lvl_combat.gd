@@ -35,7 +35,9 @@ func _ready() -> void:
 		if element.is_in_group("enemy"):
 			enemy_units.push_front(element)
 			enemy_counter += 1 
-	victory_condition = enemy_counter *(0.2) # 20% de unidades restantes
+	victory_condition = enemy_counter * (0.2) # 20% de unidades restantes
+	if victory_condition == 0:
+		victory_condition = 1
 	enemy_units_total =  enemy_units.size()
 
 func set_targets()-> void:

@@ -54,7 +54,8 @@ func _physics_process(delta):
 			temp.hurt(damage)
 			ready_to_hit = false
 			if clase == UNIT_STATS.classes.unit_type_3:
-				queue_free()
+				hurt(total_health)
+#				queue_free()
 			$Timer.start()
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
