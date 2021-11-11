@@ -16,6 +16,7 @@ var unit_type_1 = {
 					"Damage": 2,
 					"Armor": 5,
 					"Speed":5,
+					"Lvl":1,
 					"price":1
 					}
 
@@ -26,6 +27,7 @@ var unit_type_2 = {
 					"Damage": 1, 
 					"Armor": 5, 
 					"Speed": 3,
+					"Lvl":1,
 					"price":2 
 					}
 
@@ -36,6 +38,7 @@ var unit_type_3 = 	{
 					"Damage": 7,
 					"Armor": 0,
 					"Speed": 6,
+					"Lvl":1,
 					"price": 1
 					}
 
@@ -48,6 +51,7 @@ var enemy_type_1 = {
 					"Armor": 5,
 					"Speed": 0,
 					"FR": 0,
+					"Lvl":1,
 					"price": 0,
 					"Score": 50
 }
@@ -61,6 +65,7 @@ var enemy_type_2 = {
 					"Armor": 0,
 					"Speed": 0,
 					"FR": 1,
+					"Lvl":1,
 					"price": 0,
 					"Score": 200
 }

@@ -43,7 +43,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7993, 1.26164, -0.25345 )
 [node name="StaticBody5" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 12.4997, 1.19482, 0.026428 )
 
+[node name="StaticBody6" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 12.4997, 1.19482, 3.02643 )
+
+[node name="StaticBody7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 12.4997, 1.19482, -2.97357 )
+
 [node name="StaticBody" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 9.00458, 2.28787, 0 )
+
+[node name="StaticBody3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.273, -4 )
+
+[node name="StaticBody4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 9.00458, 2.28787, 4 )
 
 [node name="ui_hud" parent="." instance=ExtResource( 7 )]

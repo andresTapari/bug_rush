@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 UNIT_STATS="*res://script/globals/UNIT_CLASESS.gd"
+LVL_MASTER="*res://script/globals/LVL_MASTER.gd"
 
 [input]
 

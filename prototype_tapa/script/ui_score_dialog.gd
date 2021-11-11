@@ -24,7 +24,6 @@ func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool):
 		label_victory.text = "¡VICTORY!"
 	else:
 		label_victory.text = "¡DEFEAT!"
-	
 
 func _on_Timer_Score_timeout():
 	if total_score > score_counter:
@@ -44,3 +43,13 @@ func _on_Timer_Score_timeout():
 func _on_Button_redo_pressed():
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
+
+
+func _on_Button_lvl_selection_pressed() -> void:
+	var lvl_selection = "res://lvls/lvl_selection.tscn"
+	get_tree().change_scene(lvl_selection)
+
+
+func _on_Buton_main_menu_pressed() -> void:
+	var lvl_selection = "res://lvls/main_menu.tscn"
+	get_tree().change_scene(lvl_selection)
