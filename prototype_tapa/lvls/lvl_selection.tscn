@@ -37,17 +37,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -348.0
-margin_top = -72.0
-margin_right = 374.0
-margin_bottom = 70.0
+margin_left = -361.0
+margin_top = -84.0
+margin_right = 361.0
+margin_bottom = 84.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 margin_right = 722.0
-margin_bottom = 142.0
+margin_bottom = 168.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/vseparation = 10
@@ -58,57 +58,43 @@ __meta__ = {
 }
 
 [node name="Button_lvl_1" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 112.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
 
-[node name="Button2" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button_lvl_2" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 122.0
 margin_right = 234.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
+index = 2
 
-[node name="Button3" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button_lvl_3" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 244.0
 margin_right = 356.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
+index = 3
 
-[node name="Button4" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button_lvl_4" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 366.0
 margin_right = 478.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
+index = 4
 
-[node name="Button5" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button_lvl_5" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 488.0
 margin_right = 600.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
+index = 5
 
-[node name="Button6" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button_lvl_6" parent="MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 610.0
 margin_right = 722.0
-margin_bottom = 142.0
 size_flags_horizontal = 15
 size_flags_vertical = 15
+index = 6
 
 [node name="Button_main_menu" type="Button" parent="."]
 anchor_left = 0.5
