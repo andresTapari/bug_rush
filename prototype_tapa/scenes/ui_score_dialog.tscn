@@ -163,6 +163,7 @@ text = "Main Menu"
 wait_time = 0.01
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button_redo" to="." method="_on_Button_redo_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button_next_lvl" to="." method="_on_Button_next_lvl_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_lvl_selection" to="." method="_on_Button_lvl_selection_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buton_main_menu" to="." method="_on_Buton_main_menu_pressed"]
 [connection signal="timeout" from="Timer_Score" to="." method="_on_Timer_Score_timeout"]

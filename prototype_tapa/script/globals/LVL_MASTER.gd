@@ -15,6 +15,14 @@ var lvl_1_info ={
 				"stars": 0
 }
 
+# Info de lvl_1:
+var lvl_2_info ={
+				"score": 0,
+				"coins": 0,
+				"icon_path": "",
+				"stars": 0
+}
+
 # Funciones:
 func lvl_path(_value: int) -> String:
 	match _value:

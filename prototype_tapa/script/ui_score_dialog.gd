@@ -3,17 +3,20 @@ extends PanelContainer
 # Nodos:
 onready var label_victory = get_node('VBoxContainer/Label_victory_defeat')
 onready var label_score   = get_node("VBoxContainer/Label_n_score")
+onready var label_coin    = get_node('VBoxContainer/Label_n_coins')
 onready var btn_next_lvl  = get_node('VBoxContainer/HBoxContainer2/Button_next_lvl')
+
 # Variables:
 var total_score: 	int  = 0
 var top_score: 		int  = 0
 var score_counter: 	int  = 0
 var victory_flag:	bool = false
+
 func _ready():
 	hide()
 
 # Funciones:
-func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool):
+func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool) -> void:
 	show()
 	$Timer_Score.start()
 	total_score 	= _total_score
@@ -24,6 +27,11 @@ func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool):
 		label_victory.text = "¡VICTORY!"
 	else:
 		label_victory.text = "¡DEFEAT!"
+
+func update_player_info()-> void:
+	LVL_MASTER.player_info["current_lvl"] += 1
+	LVL_MASTER.player_info["score"] += score_counter
+	LVL_MASTER.player_info["coins"] += score_counter
 
 func _on_Timer_Score_timeout():
 	if total_score > score_counter:
@@ -37,19 +45,27 @@ func _on_Timer_Score_timeout():
 			$VBoxContainer/HBoxContainer/CheckBox_3.pressed = true
 	else:
 		$Timer_Score.stop()
+		label_coin = String(score_counter)
+		update_player_info()
 		$VBoxContainer/HBoxContainer2/Button_next_lvl.disabled = !victory_flag
-
 
 func _on_Button_redo_pressed():
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 
-
 func _on_Button_lvl_selection_pressed() -> void:
 	var lvl_selection = "res://lvls/lvl_selection.tscn"
+	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
-
 
 func _on_Buton_main_menu_pressed() -> void:
 	var lvl_selection = "res://lvls/main_menu.tscn"
+	# warning-ignore:return_value_discarded
+	get_tree().change_scene(lvl_selection)
+
+
+func _on_Button_next_lvl_pressed() -> void:
+	var current_lvl = LVL_MASTER.player_info["current_lvl"]
+	var lvl_selection = LVL_MASTER.lvl_path(current_lvl)
+	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)

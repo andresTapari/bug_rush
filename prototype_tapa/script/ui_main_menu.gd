@@ -7,12 +7,13 @@ func _ready() -> void:
 # Señales:
 func _on_Button_play_pressed() -> void:
 	var current_lvl = LVL_MASTER.player_info["current_lvl"]
+	#warning-ignore:return_value_discarded
 	get_tree().change_scene(LVL_MASTER.lvl_path(current_lvl))
 
 func _on_Button_lvl_selection_pressed() -> void:
 	var lvl_selection = "res://lvls/lvl_selection.tscn"
+	#warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
-
 
 func _on_Button_exit_pressed() -> void:
 	# Guardar progreso
