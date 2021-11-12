@@ -9,6 +9,7 @@
 [ext_resource path="res://script/ui_army_unit_button.gd" type="Script" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 48, 0, 48, 48 )
 
