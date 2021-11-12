@@ -3,6 +3,7 @@ extends Node
 enum classes {	unit_type_1, 	#0
 				unit_type_2,	#1
 				unit_type_3,	#2
+#				unit_type_n,	#n
 				enemy_type_1,	#3
 				enemy_type_2,	#4
 				enemy_type_3	#5
@@ -42,6 +43,17 @@ var unit_type_3 = 	{
 					"price": 1
 					}
 
+#var unit_type_3 = 	{
+#					"Type": classes.unit_type_3,
+#					"Name": "unit_3",
+#					"Health": 5,
+#					"Damage": 7,
+#					"Armor": 0,
+#					"Speed": 6,
+#					"Lvl":1,
+#					"price": 1
+#					}
+
 #enemy fence
 var enemy_type_1 = {
 					"Type": classes.enemy_type_1,
@@ -70,3 +82,17 @@ var enemy_type_2 = {
 					"Score": 200
 }
 
+# Funciones
+
+func get_unit_stats(_index: int) -> Dictionary:
+	match _index:
+		1:
+			return unit_type_1
+		2:
+			return unit_type_2
+		3:
+			return unit_type_3
+#	Completar aca para agregar mas unideades
+#		4:
+#			return unit_type_4
+	return {}

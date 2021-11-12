@@ -4,7 +4,7 @@ extends Node
 var player_info = {
 				"current_lvl": 1,
 				"score":0,
-				"coins":0,
+				"coins":10,
 }
 
 # Info de lvl's:
