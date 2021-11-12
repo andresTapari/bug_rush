@@ -1,4 +1,4 @@
-extends PanelContainer
+extends PopupDialog
 
 # Nodos:
 onready var label_victory = get_node('VBoxContainer/Label_victory_defeat')
@@ -81,22 +81,35 @@ func _on_Timer_Score_timeout():
 		$VBoxContainer/HBoxContainer2/Button_next_lvl.disabled = !victory_flag
 
 func _on_Button_redo_pressed():
+	get_tree().paused = false
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 
 func _on_Button_lvl_selection_pressed() -> void:
+	get_tree().paused = false
 	var lvl_selection = "res://lvls/lvl_selection.tscn"
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
 
 func _on_Buton_main_menu_pressed() -> void:
+	get_tree().paused = false
 	var lvl_selection = "res://lvls/main_menu.tscn"
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
 
 
 func _on_Button_next_lvl_pressed() -> void:
+	get_tree().paused = false
 	var current_lvl = LVL_MASTER.player_info["current_lvl"]
 	var lvl_selection = LVL_MASTER.lvl_path(current_lvl)
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
+
+
+func _on_PopupDialog_about_to_show():
+	get_tree().paused = true
+	pass
+
+
+func _on_PopupDialog_popup_hide():
+	get_tree().paused = false

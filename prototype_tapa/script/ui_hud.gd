@@ -16,6 +16,11 @@ func _ready() -> void:
 	army_generator.connect('attack_started',self,"handle_attack_started")
 	lvl_progress_barr.value = 0
 
+func _input(event):
+	if  event is InputEventKey and Input.is_action_pressed("pause"):
+		print(event)
+		$ui_pause_dialog.popup()
+
 # señales:
 func _on_Button_pressed() -> void:
 	pass
@@ -29,6 +34,15 @@ func _on_btn_preparar_ataque_pressed() -> void:
 		pass
 
 func handle_attack_started():
-	btn_prepare.text = "Terminar Ataque"
+	btn_prepare.text = "Stop Atack"
 	player_state = "atacando"
 	
+func _on_ui_pause_dialog_popup_hide():
+	get_tree().paused = false
+
+func _on_ui_pause_dialog_about_to_show():
+	get_tree().paused = true
+
+
+func _on_ui_score_dialog_visibility_changed():
+	get_tree().paused = !get_tree().paused
