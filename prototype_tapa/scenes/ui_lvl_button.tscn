@@ -17,6 +17,7 @@ margin_bottom = 168.0
 rect_min_size = Vector2( 112, 168 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+disabled = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -152,3 +153,5 @@ margin_right = 112.0
 margin_bottom = 168.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

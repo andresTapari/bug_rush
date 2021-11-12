@@ -79,6 +79,7 @@ func _on_Timer_Score_timeout():
 		label_coin = String(score_counter)
 		update_player_info()
 		$VBoxContainer/HBoxContainer2/Button_next_lvl.disabled = !victory_flag
+		get_tree().paused = true
 
 func _on_Button_redo_pressed():
 	get_tree().paused = false
@@ -107,7 +108,6 @@ func _on_Button_next_lvl_pressed() -> void:
 
 
 func _on_PopupDialog_about_to_show():
-	get_tree().paused = true
 	pass
 
 

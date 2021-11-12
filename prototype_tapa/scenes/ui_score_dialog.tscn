@@ -4,7 +4,6 @@
 
 [node name="PopupDialog" type="PopupDialog"]
 pause_mode = 2
-visible = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 167.0
