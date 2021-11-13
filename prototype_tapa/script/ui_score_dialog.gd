@@ -83,7 +83,8 @@ func _on_Timer_Score_timeout():
 		get_tree().paused = true
 
 func _on_Button_redo_pressed():
-	LVL_MASTER.player_info["current_lvl"] -= 1
+	if victory_flag:
+		LVL_MASTER.player_info["current_lvl"] -= 1
 	get_tree().paused = false
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
