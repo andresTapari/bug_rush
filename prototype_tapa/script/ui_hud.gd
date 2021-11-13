@@ -5,7 +5,7 @@ signal stop_round
 # nodos:
 onready var lvl_progress_barr = get_node('VBoxContainer/TextureProgress')
 onready var btn_prepare 	  = get_node('VBoxContainer/btn_preparar_ataque')
-onready var army_generator	  = get_node('army_generator')
+onready var army_generator	  = get_node('ui_army_spawner')
 onready var lvl_counter		  = get_node('MarginContainer/VBoxContainer/HBoxContainer2/Label_lvl_counter')
 #onready var score_dialog	  = get_node("ui_score_dialog")
 

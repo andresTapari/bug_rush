@@ -66,6 +66,7 @@ func _on_Button_amount_less_pressed() -> void:
 	if unit_number == 0:
 		btn_n_less.disabled = true
 	label_number.text = String(unit_number)
+#	signal self -> ui_army_spawner
 	emit_signal('update_coins_counter')
 
 	#Delay:

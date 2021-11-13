@@ -21,7 +21,7 @@ func _ready() -> void:
 
 	# Señal del army generator hacia el spawner
 	# warning-ignore:return_value_discarded
-	$ui_hud/army_generator.connect("spawn_units",$Spawner,"spawn_units")
+	$ui_hud/ui_army_spawner.connect("spawn_units",$Spawner,"spawn_units")
 	
 	# Señal del spawner al lvl
 	# warning-ignore:return_value_discarded
