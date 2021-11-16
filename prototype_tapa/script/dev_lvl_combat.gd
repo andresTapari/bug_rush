@@ -13,8 +13,10 @@ var victory_condition:  int   = 1
 
 var lvl_score: 			int = 0
 var lvl_top_score: 		int = 0
+export var index_lvl: int
 
 func _ready() -> void:
+	LVL_MASTER.player_info["current_lvl"]=index_lvl
 	# Señal de ui_hud al lvl
 	# warning-ignore:return_value_discarded
 	$ui_hud.connect("stop_round",self,"stop_round")

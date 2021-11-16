@@ -58,7 +58,7 @@ func update_player_info()-> void:
 			LVL_MASTER.lvl_6_info["stars"] = stars_counter
 	
 	if victory_flag:
-		LVL_MASTER.player_info["current_lvl"] += 1
+		LVL_MASTER.lvl_info(index+1)["lvl_unloqued"]=true
 		LVL_MASTER.player_info["score"] += score_counter
 		LVL_MASTER.player_info["coins"] += score_counter
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/bettle.glb-4a8ed8b5b41d8ea3c4e6c4f8959a4804.scn"
+path="res://.import/bettle.glb-f1d2f93343b1128f428c4faf9d787fef.scn"
 
 [deps]
 
-source_file="res://assets/3d_models/bettle/bettle.glb"
-dest_files=[ "res://.import/bettle.glb-4a8ed8b5b41d8ea3c4e6c4f8959a4804.scn" ]
+source_file="res://assets/3d_models/units/bettle/bettle.glb"
+dest_files=[ "res://.import/bettle.glb-f1d2f93343b1128f428c4faf9d787fef.scn" ]
 
 [params]
 

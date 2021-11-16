@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/ladybug.glb-3a3d9de6b1ecab8319be0ce913e9ffe3.scn"
+path="res://.import/ladybug.glb-f119980dac9a7a9d68dd8d307332cbb3.scn"
 
 [deps]
 
-source_file="res://assets/3d_models/ladybug/ladybug.glb"
-dest_files=[ "res://.import/ladybug.glb-3a3d9de6b1ecab8319be0ce913e9ffe3.scn" ]
+source_file="res://assets/3d_models/units/ladybug/ladybug.glb"
+dest_files=[ "res://.import/ladybug.glb-f119980dac9a7a9d68dd8d307332cbb3.scn" ]
 
 [params]
 

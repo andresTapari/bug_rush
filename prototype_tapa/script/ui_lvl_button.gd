@@ -7,9 +7,12 @@ func _ready() -> void:
 
 # Funciones
 func update_status(_index):
-	if _index <= LVL_MASTER.player_info["current_lvl"]:
-		$Button.disabled = false
+	
 	var dictionary = LVL_MASTER.lvl_info(_index)
+	
+	if dictionary["lvl_unloqued"]:
+			$Button.disabled = false
+		
 	var msg: String = String(dictionary["score"]) + "/" \
 						+ " $"+ String(dictionary["coins"])
 	$Button/VBoxContainer/Label_score_coin.text = msg

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/Spawner_player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/texture/PNG/Light/texture_08.png" type="Texture" id=2]
+[ext_resource path="res://scenes/enemy_tower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/enemy_fence.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Camera_gimbal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/dev_lvl_combat.gd" type="Script" id=6]
+[ext_resource path="res://scenes/enemy_hard_tower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/special_unit.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_color = Color( 0.658824, 0.662745, 1, 1 )
+albedo_texture = ExtResource( 2 )
+
+[node name="dev_lvl_combat" type="Spatial"]
+script = ExtResource( 6 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="Terreno" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083786, 0.0932331, -0.0654593 )
+width = 36.0
+depth = 36.0
+material = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="CSGCombiner"]
+transform = Transform( 0.965926, 0.0669873, 0.25, -0.258819, 0.25, 0.933013, 0, -0.965926, 0.258819, 0, 31.1896, 0 )
+light_energy = 0.5
+
+[node name="Punto_A" type="Position3D" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.6, -9 )
+
+[node name="StaticBody5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29877, 1.20969, 2.76041 )
+
+[node name="Camera_gimbal" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 0, 0 )
+zoom_speed = 0.35
+zoom = 7.0
+
+[node name="Spawner" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79934, 1.26164, -9.25345 )
+
+[node name="StaticBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27345, 2 )
+
+[node name="StaticBody2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.27345, 0 )
+
+[node name="enemy_hard_tower" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65, 1.21, -14.236 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1.58933e-08, 0, 1, 0, 1, 0, -1, 0, -1.58933e-08, 15, 5, 15 )
