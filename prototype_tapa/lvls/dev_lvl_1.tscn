@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Spawner_player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/texture/PNG/Green/texture_08.png" type="Texture" id=2]
+[ext_resource path="res://assets/texture/PNG/Light/texture_06.png" type="Texture" id=2]
 [ext_resource path="res://scenes/enemy_tower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/enemy_fence.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Camera_gimbal.tscn" type="PackedScene" id=5]
@@ -15,8 +15,9 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_unshaded = true
+albedo_color = Color( 0.670588, 1, 0.592157, 1 )
 albedo_texture = ExtResource( 2 )
-uv1_scale = Vector3( 0.2, 0.2, 0.2 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
 uv1_triplanar = true
 
 [node name="dev_lvl_1" type="Spatial"]
@@ -28,7 +29,7 @@ use_collision = true
 [node name="Terreno" type="CSGBox" parent="CSGCombiner"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083786, 0.0932331, -0.0654593 )
 width = 62.045
-depth = 26.0
+depth = 20.0
 material = SubResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="CSGCombiner"]
@@ -41,7 +42,7 @@ zoom_speed = 0.35
 zoom = 7.0
 
 [node name="Spawner" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8996, 1.12626, -0.713638 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8996, 1.12626, 0.00454509 )
 
 [node name="StaticBody5" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 14.8517, 1.19482, -0.973572 )
@@ -71,13 +72,13 @@ transform = Transform( -0.497095, 0, -0.867696, 0, 1, 0, 0.867696, 0, -0.497095,
 transform = Transform( -0.686999, 0, 0.726659, 0, 1, 0, -0.726659, 0, -0.686999, -28.3507, 1.58903, 7.11385 )
 
 [node name="stone_1" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1.59809, 0, -1.20254, 0, 2, 0, 1.20254, 0, 1.59809, -23.637, 2.31736, -10.656 )
+transform = Transform( 1.59809, 0, -1.20254, 0, 2, 0, 1.20254, 0, 1.59809, -25.6396, 2.31736, -7.66853 )
 
 [node name="matches" parent="." instance=ExtResource( 9 )]
-transform = Transform( 0.647415, 0, 0.762137, 0, 1, 0, -0.762137, 0, 0.647415, 20.7526, 1.94041, -7.94799 )
+transform = Transform( 0.647415, 0, 0.762137, 0, 1, 0, -0.762137, 0, 0.647415, 22.6968, 1.94041, -5.68165 )
 
 [node name="mushroom_1" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.992167, 0, 0.124918, 0, 1, 0, -0.124918, 0, 0.992167, 18.9987, -0.0595856, 11.361 )
+transform = Transform( 0.992167, 0, 0.124918, 0, 1, 0, -0.124918, 0, 0.992167, -1.00126, -0.0595856, 7.36098 )
 
 [node name="mushroom_2" parent="mushroom_1" instance=ExtResource( 12 )]
 transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183, -2.8761, 0, -0.825813 )
