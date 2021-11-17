@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/ant.glb-28d0345dfe354546c1cb5dc7d1b4b738.scn"
+path="res://.import/ant.glb-51ecbce13ef44c6a83e7afa20bca95a4.scn"
 
 [deps]
 
-source_file="res://assets/3d_models/ant/ant.glb"
-dest_files=[ "res://.import/ant.glb-28d0345dfe354546c1cb5dc7d1b4b738.scn" ]
+source_file="res://assets/3d_models/units/ant/ant.glb"
+dest_files=[ "res://.import/ant.glb-51ecbce13ef44c6a83e7afa20bca95a4.scn" ]
 
 [params]
 
