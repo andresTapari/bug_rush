@@ -34,7 +34,9 @@ func _ready() -> void:
 	for element in nodos:
 		if element.is_in_group("enemy"):
 			enemy_units.push_front(element)
+			lvl_top_score += element.score
 			enemy_counter += 1 
+	
 	#warning-ignore:narrowing_conversion
 	victory_condition = enemy_counter * (0.2) # 20% de unidades restantes
 	if victory_condition == 0:
@@ -48,11 +50,13 @@ func set_targets()-> void:
 	for element in nodos:
 		if element.is_in_group("player"):
 			player_units.push_front(element)
-			element.connect("player_unit_destroyed",self,"handle_destroy_unit")
+			if !element.is_connected("player_unit_destroyed",self,"handle_destroy_unit"):
+				element.connect("player_unit_destroyed",self,"handle_destroy_unit")
 		if element.is_in_group("enemy"):
-			lvl_top_score += element.score
+#			lvl_top_score += element.score
 			enemy_units.push_front(element)
-			element.connect("enemy_unit_destroyed",self,"handle_destroy_enemy")
+			if !element.is_connected("enemy_unit_destroyed",self,"handle_destroy_enemy"):
+				element.connect("enemy_unit_destroyed",self,"handle_destroy_enemy")
 	for element in player_units:
 		element.set_targets_to_attack(enemy_units.duplicate(true))
 	

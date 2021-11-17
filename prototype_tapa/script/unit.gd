@@ -54,14 +54,20 @@ func _physics_process(delta):
 	if ray_cast.is_colliding():
 		var temp = ray_cast.get_collider()
 		if ready_to_hit and temp.is_in_group("enemy"):
+			$Mesh.set_animation("atack")
 			temp.hurt(damage)
 			ready_to_hit = false
 			if clase == UNIT_STATS.classes.unit_type_3:
 				hurt(total_health)
 #				queue_free()
 			$Timer.start()
+#		else:
+#			$Mesh.set_animation("walk")	
+	else:
+		$Mesh.set_animation("walk")	
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
 
 # Funciones:
 func hurt(_damage: float) -> void:
@@ -97,10 +103,13 @@ func set_stats(	_value) -> void:
 	match _value["Type"]:
 		UNIT_STATS.classes.unit_type_1:
 			$Mesh/unit_type_1.visible = true
+			$Mesh.set_current_mesh_animation($Mesh/unit_type_1/AnimationPlayer)
 		UNIT_STATS.classes.unit_type_2:
 			$Mesh/unit_type_2.visible = true
+			$Mesh.set_current_mesh_animation($Mesh/unit_type_2/AnimationPlayer)
 		UNIT_STATS.classes.unit_type_3:
 			$Mesh/unit_type_3.visible = true
+			$Mesh.set_current_mesh_animation($Mesh/unit_type_3/AnimationPlayer)
 
 func set_targets_to_attack(_value: Array) -> void:
 	targets_to_attack = _value
