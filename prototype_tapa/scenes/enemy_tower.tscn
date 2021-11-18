@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://script/enemy_tower.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HealthBarr3D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/materials/enemy_material_base.tres" type="Material" id=3]
 [ext_resource path="res://assets/materials/unit_material_outline.tres" type="Material" id=4]
+[ext_resource path="res://assets/3d_models/enemy_units/enemy_tank/tank_1_top.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/3d_models/enemy_units/enemy_tank/tank_1_bottom.tscn" type="PackedScene" id=6]
 
-[sub_resource type="CylinderShape" id=1]
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.49114, 1.09779, 1.59561 )
 
 [sub_resource type="CylinderMesh" id=2]
 material = ExtResource( 3 )
@@ -57,11 +60,12 @@ radius = 8.0
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214131, 1.01184, 0.00689495 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214131, 0.498709, -0.255675 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+visible = false
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -70,19 +74,23 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Muzzle" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5647, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80419, 0 )
 
 [node name="Draw" type="ImmediateGeometry" parent="Muzzle"]
 material_override = SubResource( 4 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Muzzle"]
 transform = Transform( 0.5, -1.19209e-07, -7.81621e-16, 0, -4.37114e-08, 0.15, -5.96046e-08, -1, -6.55671e-09, 0, 0, 0 )
+visible = false
 mesh = SubResource( 5 )
 material/0 = null
 
 [node name="MeshInstance" type="MeshInstance" parent="Muzzle/MeshInstance"]
 mesh = SubResource( 6 )
 material/0 = ExtResource( 4 )
+
+[node name="tank_1_top" parent="Muzzle" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, -0.0546691, 0 )
 
 [node name="zona_de_deteccion" type="Area" parent="."]
 
@@ -94,6 +102,9 @@ shape = SubResource( 7 )
 
 [node name="HealthBarr3D" parent="." instance=ExtResource( 2 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 3.48117, 0 )
+
+[node name="tank_1_bottom" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0.919286, 0 )
 
 [connection signal="body_entered" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_entered"]
 [connection signal="body_exited" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_exited"]
