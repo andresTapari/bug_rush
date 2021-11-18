@@ -92,6 +92,9 @@ material/0 = ExtResource( 4 )
 [node name="tank_1_top" parent="Muzzle" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, -0.0546691, 0 )
 
+[node name="gun" type="Position3D" parent="Muzzle"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.106679, -2.15788 )
+
 [node name="zona_de_deteccion" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="zona_de_deteccion"]

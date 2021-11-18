@@ -18,6 +18,7 @@ var weapon_enable: bool = true
 # Nodos:
 onready var draw   		= get_node('Muzzle/Draw')
 onready var muzzle 		= get_node('Muzzle')
+onready var gun			= get_node('Muzzle/gun')
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
 # Escenas:
@@ -61,7 +62,7 @@ func shoot() -> void:
 		weapon_enable = false
 		var b = BULLET.instance()
 		b.damage = damage
-		b.transform = get_node("Muzzle").global_transform
+		b.transform = gun.global_transform
 		b.velocity = -b.transform.basis.z * -b.muzzle_velocity
 		get_parent().add_child(b)
 		get_node("Timer").start()
