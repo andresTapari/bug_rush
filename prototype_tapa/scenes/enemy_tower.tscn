@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/3d_models/enemy_units/enemy_tank/tank_1_top.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/3d_models/enemy_units/enemy_tank/tank_1_bottom.tscn" type="PackedScene" id=6]
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.49114, 1.09779, 1.59561 )
 
 [sub_resource type="CylinderMesh" id=2]
@@ -61,7 +61,7 @@ script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0214131, 0.498709, -0.255675 )
-shape = SubResource( 8 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

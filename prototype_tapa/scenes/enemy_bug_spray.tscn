@@ -1,11 +1,81 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/3d_models/enemy_units/bug_spray.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/texture/particles/buble_grey.png" type="Texture" id=2]
+[ext_resource path="res://scenes/HealthBarr3D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/enemy_bug_spray.gd" type="Script" id=4]
 
-[node name="enemy_bug_spray" type="Spatial"]
+[sub_resource type="CylinderShape" id=1]
+height = 4.0
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+params_billboard_mode = 1
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.98
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, -150.184 ), 0.0, 0.0, 0, 0, Vector2( 1, 360 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 5, 2, 4 )
+
+[node name="enemy_bug_spray" type="StaticBody" groups=[
+"enemy",
+]]
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+shape = SubResource( 1 )
+
+[node name="enemy_bug_spray" type="Spatial" parent="."]
 
 [node name="bug_spray" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
 
 [node name="Position3D" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436223, 3.75546, 1.17917 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00436223, 3.99016, 0.464525 )
+
+[node name="CPUParticles" type="CPUParticles" parent="Position3D"]
+emitting = false
+amount = 20
+mesh = SubResource( 3 )
+direction = Vector3( 0, 0, 1 )
+flatness = 0.59
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = 10.0
+linear_accel = 5.0
+linear_accel_random = 1.0
+tangential_accel = 5.0
+damping_random = 0.32
+angle = 61.9
+angle_curve = SubResource( 4 )
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 5 )
+
+[node name="zona_de_deteccion" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521964, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="zona_de_deteccion"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3 )
+shape = SubResource( 6 )
+
+[node name="HealthBarr3D" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 5.16179, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_entered"]
+[connection signal="body_exited" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

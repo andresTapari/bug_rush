@@ -6,6 +6,7 @@ signal player_unit_destroyed(_value)
 
 #Escenas:
 onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
+onready var EXPLOSION = preload('res://scenes/unit_explosion.tscn')
 
 #Nodos:
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
@@ -79,6 +80,9 @@ func hurt(_damage: float) -> void:
 	get_parent().add_child(h)
 	if actual_health <= 0:
 		emit_signal("player_unit_destroyed",self)
+		var E = EXPLOSION.instance()
+		E.transform = self.global_transform
+		get_parent().add_child(E)
 		queue_free()
 
 func get_nearest_target():
