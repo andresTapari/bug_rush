@@ -18,11 +18,13 @@ var weapon_enable: bool = true
 # Nodos:
 onready var draw   		= get_node('Muzzle/Draw')
 onready var muzzle 		= get_node('Muzzle')
+onready var gun			= get_node('Muzzle/gun')
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
 # Escenas:
 onready var BULLET = preload('res://scenes/bullet.tscn')
 onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
+onready var SMOKE = preload('res://scenes/shoot_smoke.tscn')
 
 func _ready() -> void:
 	type 			= UNIT_STATS.enemy_type_2["Type"]
@@ -61,10 +63,14 @@ func shoot() -> void:
 		weapon_enable = false
 		var b = BULLET.instance()
 		b.damage = damage
-		b.transform = get_node("Muzzle").global_transform
+		b.transform = gun.global_transform
 		b.velocity = -b.transform.basis.z * -b.muzzle_velocity
 		get_parent().add_child(b)
 		get_node("Timer").start()
+
+#		var h = SMOKE.instance()
+#		h.transform = gun.global_transform
+#		get_parent().add_child(h)
 
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
