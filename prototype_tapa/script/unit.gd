@@ -95,7 +95,17 @@ func get_nearest_target():
 			target_to_move = element
 			dist_to_target_to_move = element.translation.distance_to(self.translation)
 	return target_to_move
+
+#Agregar bibración cuando una unidad percibe daño
+#func add_trauma(amount):
+#	trauma = min(trauma + amount, 1.0)
 	
+#func shake():
+#	var amount = pow(trauma, trauma_power)
+#	rotation.z = max_roll * amount * rand_range(-1, 1)
+#	offset_shake.x = max_offset.x * amount * rand_range(-1, 1) 
+#	offset_shake.y = max_offset.y * amount * rand_range(-1, 1)
+
 # Funciones set&get:
 func set_stats(	_value) -> void:
 	total_health  = _value["Health"]
@@ -120,5 +130,6 @@ func set_targets_to_attack(_value: Array) -> void:
 	if !targets_to_attack.empty():
 		target = get_nearest_target()
 
+# Señales
 func _on_Timer_timeout() -> void:
 	ready_to_hit = true
