@@ -25,9 +25,16 @@ var target_to_move: NodePath
 var velocity: Vector3    		= Vector3.ZERO
 var targets_to_attack:Array 	= [] setget set_targets_to_attack
 var target						= null
-var actual_health:float			= total_health
+var actual_health: float		= total_health
 var target_pos: Vector3 		= Vector3()
 var ready_to_hit: bool 			= true
+
+var trauma: float 				= 0
+var trauma_power: int 			= 1
+var decay: float 				= 0.8
+var max_roll: float  			= 0.1
+var offset_shake: Vector3 		= Vector3()
+var max_offset: Vector3			= Vector3()
 
 func _ready() -> void:
 	#Ajuste de cajas de colision
@@ -68,16 +75,24 @@ func _physics_process(delta):
 		$Mesh.set_animation("walk")	
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
+	$Mesh.translation += offset_shake
 	
+	if trauma:
+		trauma = max(trauma - decay * delta, 0)
+		shake()
+
+
 
 # Funciones:
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
+	add_trauma(10)
 	var h = HIT_COUNTER.instance()
 	h.set_damage(_damage)
 	h.transform = self.global_transform
 	get_parent().add_child(h)
+	
 	if actual_health <= 0:
 		emit_signal("player_unit_destroyed",self)
 		var E = EXPLOSION.instance()
@@ -97,14 +112,14 @@ func get_nearest_target():
 	return target_to_move
 
 #Agregar bibración cuando una unidad percibe daño
-#func add_trauma(amount):
-#	trauma = min(trauma + amount, 1.0)
+func add_trauma(amount):
+	trauma = min(trauma + amount, 1.0)
 	
-#func shake():
-#	var amount = pow(trauma, trauma_power)
-#	rotation.z = max_roll * amount * rand_range(-1, 1)
-#	offset_shake.x = max_offset.x * amount * rand_range(-1, 1) 
-#	offset_shake.y = max_offset.y * amount * rand_range(-1, 1)
+func shake():
+	var amount = pow(trauma, trauma_power)
+	$Mesh.rotation.z = max_roll * amount * rand_range(-1, 1)
+	offset_shake.x = max_offset.x * amount * rand_range(-1, 1) 
+	offset_shake.y = max_offset.y * amount * rand_range(-1, 1)
 
 # Funciones set&get:
 func set_stats(	_value) -> void:
