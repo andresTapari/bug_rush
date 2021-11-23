@@ -41,44 +41,20 @@ func _ready() -> void:
 			enemy_units.push_front(element)
 			lvl_top_score += element.score
 			enemy_counter += 1 
-<<<<<<< HEAD
 			element.connect("enemy_unit_destroyed",self,"handle_destroy_enemy")
 			
-=======
-	
->>>>>>> units_mesh
 	#warning-ignore:narrowing_conversion
 	victory_condition = enemy_counter * (0.2) # 20% de unidades restantes
 	if victory_condition == 0:
 		victory_condition = 1
 	enemy_units_total =  enemy_units.size()
 
-<<<<<<< HEAD
 func set_targets(_nodos)-> void:
 	for element in _nodos:
 		player_units.push_front(element)
 		element.connect("player_unit_destroyed",self,"handle_destroy_unit")
 		element.set_targets_to_attack(enemy_units)
-=======
-func set_targets()-> void:
-	var nodos:Array = get_children() 
-	player_units.clear()
-	enemy_units.clear()
-	for element in nodos:
-		if element.is_in_group("player"):
-			player_units.push_front(element)
-			if !element.is_connected("player_unit_destroyed",self,"handle_destroy_unit"):
-				element.connect("player_unit_destroyed",self,"handle_destroy_unit")
-		if element.is_in_group("enemy"):
-#			lvl_top_score += element.score
-			enemy_units.push_front(element)
-			if !element.is_connected("enemy_unit_destroyed",self,"handle_destroy_enemy"):
-				element.connect("enemy_unit_destroyed",self,"handle_destroy_enemy")
-	for element in player_units:
-		element.set_targets_to_attack(enemy_units.duplicate(true))
-	
->>>>>>> units_mesh
-		
+
 func handle_destroy_enemy(_enemy_unit_name):
 	lvl_score += _enemy_unit_name.score
 	enemy_units.erase(_enemy_unit_name)
