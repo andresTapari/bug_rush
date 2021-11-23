@@ -2,9 +2,9 @@ extends Node
 
 # Info de player:
 var player_info = {
-				"current_lvl": 1,
 				"score":0,
 				"coins":10,
+
 }
 
 # Info de lvl's:
@@ -12,39 +12,45 @@ var lvl_1_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":true
 }
 
 var lvl_2_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":false
 }
 
 var lvl_3_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":false
 }
 var lvl_4_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":false
 }
 var lvl_5_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":false
 }
 var lvl_6_info ={
 				"score": 0,
 				"coins": 0,
 				"icon_path": "",
-				"stars": 0
+				"stars": 0,
+				"lvl_unloqued":false
 }
 
 # Funciones:

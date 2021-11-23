@@ -58,7 +58,7 @@ func update_player_info()-> void:
 			LVL_MASTER.lvl_6_info["stars"] = stars_counter
 	
 	if victory_flag:
-		LVL_MASTER.player_info["current_lvl"] += 1
+		LVL_MASTER.lvl_info(index+1)["lvl_unloqued"]=true
 		LVL_MASTER.player_info["score"] += score_counter
 		LVL_MASTER.player_info["coins"] += score_counter
 
@@ -105,7 +105,7 @@ func _on_Buton_main_menu_pressed() -> void:
 func _on_Button_next_lvl_pressed() -> void:
 	get_tree().paused = false
 	var current_lvl = LVL_MASTER.player_info["current_lvl"]
-	var lvl_selection = LVL_MASTER.lvl_path(current_lvl)
+	var lvl_selection = LVL_MASTER.lvl_path(current_lvl+1)
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
 

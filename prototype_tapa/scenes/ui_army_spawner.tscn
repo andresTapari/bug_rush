@@ -79,7 +79,7 @@ size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
 margin_right = 331.0
-margin_bottom = 431.0
+margin_bottom = 568.0
 
 [node name="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 4 )]
 
@@ -107,6 +107,11 @@ unit_index = 3
 margin_top = 427.0
 margin_right = 331.0
 margin_bottom = 431.0
+
+[node name="MarginContainer4" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 435.0
+margin_bottom = 568.0
+unit_index = 4
 
 [node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 margin_top = 413.0
