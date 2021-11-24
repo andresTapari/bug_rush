@@ -2,13 +2,22 @@
 
 [ext_resource path="res://script/unit_explosion.gd" type="Script" id=2]
 
+<<<<<<< HEAD
 [sub_resource type="SpatialMaterial" id=4]
+=======
+[sub_resource type="SpatialMaterial" id=1]
+>>>>>>> Diego
 flags_transparent = true
 flags_unshaded = true
 params_billboard_mode = 1
 
+<<<<<<< HEAD
 [sub_resource type="QuadMesh" id=5]
 material = SubResource( 4 )
+=======
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+>>>>>>> Diego
 size = Vector2( 0.5, 0.5 )
 
 [sub_resource type="Curve" id=3]
