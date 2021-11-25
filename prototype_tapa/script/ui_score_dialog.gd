@@ -83,6 +83,7 @@ func _on_Timer_Score_timeout():
 		get_tree().paused = true
 
 func _on_Button_redo_pressed():
+	SOUND_FX.button_play("back/cancel")
 	if victory_flag:
 		LVL_MASTER.player_info["current_lvl"] -= 1
 	get_tree().paused = false
@@ -90,12 +91,14 @@ func _on_Button_redo_pressed():
 	get_tree().reload_current_scene()
 
 func _on_Button_lvl_selection_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	get_tree().paused = false
 	var lvl_selection = "res://lvls/lvl_selection.tscn"
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
 
 func _on_Buton_main_menu_pressed() -> void:
+	SOUND_FX.button_play("back/cancel")
 	get_tree().paused = false
 	var lvl_selection = "res://lvls/main_menu.tscn"
 	# warning-ignore:return_value_discarded
@@ -103,6 +106,7 @@ func _on_Buton_main_menu_pressed() -> void:
 
 
 func _on_Button_next_lvl_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	get_tree().paused = false
 	var current_lvl = LVL_MASTER.player_info["current_lvl"]
 	var lvl_selection = LVL_MASTER.lvl_path(current_lvl+1)

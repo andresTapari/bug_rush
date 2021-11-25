@@ -12,7 +12,7 @@ onready var EXPLOSION = preload('res://scenes/unit_explosion.tscn')
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var ray_cast 	= get_node('RayCast')
 onready var tween		= get_node('Tween')
-onready var sound_fx	= get_node('AudioStreamPlayer3D')
+onready var sound_fx	= get_node('AudioStreamPlayer')
 
 #Variables:
 export var speed: float	 	    	= 5

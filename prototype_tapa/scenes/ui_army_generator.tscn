@@ -123,6 +123,7 @@ func _on_ButtonD_up3_pressed():
 "
 
 [node name="army_generator" type="WindowDialog"]
+visible = true
 margin_top = -2.0
 margin_right = 320.0
 margin_bottom = 263.0

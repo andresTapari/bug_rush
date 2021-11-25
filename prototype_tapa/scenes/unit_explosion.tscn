@@ -2,13 +2,13 @@
 
 [ext_resource path="res://script/unit_explosion.gd" type="Script" id=2]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 flags_unshaded = true
 params_billboard_mode = 1
 
-[sub_resource type="QuadMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
 size = Vector2( 0.5, 0.5 )
 
 [sub_resource type="Curve" id=3]
@@ -24,7 +24,7 @@ one_shot = true
 explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 1.0
-mesh = SubResource( 5 )
+mesh = SubResource( 2 )
 emission_shape = 1
 emission_sphere_radius = 0.3
 direction = Vector3( 0, 1, 0 )

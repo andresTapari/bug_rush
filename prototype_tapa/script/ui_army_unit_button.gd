@@ -52,6 +52,7 @@ func get_unit_info()-> Dictionary:
 #Señales:
 	# Amount:
 func _on_Button_amount_plus_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	if unit_cost <= LVL_MASTER.player_info["coins"]:
 		unit_number += 1
 		LVL_MASTER.player_info["coins"] -= unit_cost
@@ -61,6 +62,7 @@ func _on_Button_amount_plus_pressed() -> void:
 	emit_signal('update_coins_counter')
 
 func _on_Button_amount_less_pressed() -> void:
+	SOUND_FX.button_play("back/cancel")
 	unit_number -= 1
 	LVL_MASTER.player_info["coins"] += unit_cost
 	if unit_number == 0:
@@ -71,12 +73,14 @@ func _on_Button_amount_less_pressed() -> void:
 
 	#Delay:
 func _on_Button_delay_plus_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	unit_delay += 1
 	if unit_delay > 0:
 		btn_del_less.disabled = false
 	label_delay.text = String(unit_delay)
 
 func _on_Button_delay_less_pressed() -> void:
+	SOUND_FX.button_play("back/cancel")
 	unit_delay -= 1
 	if unit_delay == 0:
 		btn_del_less.disabled = true 

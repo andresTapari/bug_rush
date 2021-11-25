@@ -23,6 +23,7 @@ func handle_update_coins_counter():
 
 # Señales:
 func _on_Button_pressed():
+	SOUND_FX.button_play("acept")
 	var army_list: Array = Array()
 	var units_btn_list = unit_list.get_children()
 	for item in units_btn_list:
