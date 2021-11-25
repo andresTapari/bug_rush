@@ -30,6 +30,7 @@ func _on_Button_pressed() -> void:
 
 
 func _on_btn_preparar_ataque_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	if player_state == "preparar":
 		army_generator.popup()
 	elif player_state == "atacando":

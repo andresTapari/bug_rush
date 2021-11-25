@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/unit_atack_melee.wav-9f228fd3880f9d42534f0eafb45d53df.sample"
+
+[deps]
+
+source_file="res://assets/sounds/unit_atack_melee.wav"
+dest_files=[ "res://.import/unit_atack_melee.wav-9f228fd3880f9d42534f0eafb45d53df.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

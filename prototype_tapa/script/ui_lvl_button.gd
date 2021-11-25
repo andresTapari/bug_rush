@@ -25,6 +25,7 @@ func update_status(_index):
 
 
 func _on_Button_pressed() -> void:
+	SOUND_FX.button_play("acept")
 	var lvl_path: String = ""
 	lvl_path = LVL_MASTER.lvl_path(index)
 	#warning-ignore:return_value_discarded

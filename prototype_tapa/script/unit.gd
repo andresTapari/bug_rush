@@ -12,6 +12,7 @@ onready var EXPLOSION = preload('res://scenes/unit_explosion.tscn')
 onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var ray_cast 	= get_node('RayCast')
 onready var tween		= get_node('Tween')
+onready var sound_fx	= get_node('AudioStreamPlayer3D')
 
 #Variables:
 export var speed: float	 	    	= 5
@@ -62,6 +63,7 @@ func _physics_process(delta):
 	if ray_cast.is_colliding():
 		var temp = ray_cast.get_collider()
 		if ready_to_hit and temp.is_in_group("enemy"):
+			play_sound("atack_melee")
 			$Mesh.set_animation("atack")
 			temp.hurt(damage)
 			ready_to_hit = false
@@ -81,8 +83,6 @@ func _physics_process(delta):
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 
-
-
 # Funciones:
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
@@ -92,7 +92,6 @@ func hurt(_damage: float) -> void:
 	h.set_damage(_damage)
 	h.transform = self.global_transform
 	get_parent().add_child(h)
-	
 	if actual_health <= 0:
 		emit_signal("player_unit_destroyed",self)
 		var E = EXPLOSION.instance()
@@ -120,6 +119,18 @@ func shake():
 	$Mesh.rotation.z = max_roll * amount * rand_range(-1, 1)
 	offset_shake.x = max_offset.x * amount * rand_range(-1, 1) 
 	offset_shake.y = max_offset.y * amount * rand_range(-1, 1)
+
+func play_sound(media:String)-> void:
+	match media:
+		"atack_melee":
+			sound_fx.stream = load("res://assets/sounds/unit_atack_melee.wav")
+			sound_fx.play()
+		"atack_explosion":
+			sound_fx.stream = load("res://assets/sounds/unit_atack_explosion.wav")
+			sound_fx.play()
+		"self_explosion":
+			sound_fx.stream = load("res://assets/sounds/unit_self_explosion.wav")
+			sound_fx.play()
 
 # Funciones set&get:
 func set_stats(	_value) -> void:

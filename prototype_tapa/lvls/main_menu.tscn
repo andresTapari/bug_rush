@@ -98,4 +98,5 @@ text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_play" to="." method="_on_Button_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_lvl_selection" to="." method="_on_Button_lvl_selection_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_setup" to="." method="_on_Button_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]
