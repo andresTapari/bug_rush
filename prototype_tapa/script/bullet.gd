@@ -29,4 +29,5 @@ func set_enemy(_enemy:String) -> void:
 	enemy=_enemy
 
 func set_size(scale:int) ->void:
+	# warning-ignore:return_value_discarded
 	self.transform.scaled(Vector3(scale,scale,scale))
