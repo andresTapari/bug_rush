@@ -109,6 +109,8 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 3.48117, 0 )
 [node name="tank_1_bottom" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0.919286, 0 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_entered"]
 [connection signal="body_exited" from="zona_de_deteccion" to="." method="_on_zona_de_deteccion_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -95,6 +95,7 @@ func hurt(_damage: float) -> void:
 	if actual_health <= 0:
 		emit_signal("player_unit_destroyed",self)
 		var E = EXPLOSION.instance()
+		E.set_type()
 		E.transform = self.global_transform
 		get_parent().add_child(E)
 		queue_free()

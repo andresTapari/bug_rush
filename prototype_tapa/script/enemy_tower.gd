@@ -25,6 +25,7 @@ onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 onready var BULLET = preload('res://scenes/bullet.tscn')
 onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
 onready var SMOKE = preload('res://scenes/shoot_smoke.tscn')
+onready var EXPLOSION = preload('res://scenes/unit_explosion.tscn')
 
 func _ready() -> void:
 	type 			= UNIT_STATS.enemy_type_2["Type"]
@@ -80,6 +81,10 @@ func hurt(_damage: float) -> void:
 	h.transform = self.global_transform
 	get_parent().add_child(h)
 	if actual_health <= 0:
+		var E = EXPLOSION.instance()
+		E.set_type(false)
+		E.transform = self.global_transform
+		get_parent().add_child(E)
 		emit_signal("enemy_unit_destroyed",self)
 		queue_free()
 

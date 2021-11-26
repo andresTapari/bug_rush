@@ -40,7 +40,7 @@ func _on_btn_preparar_ataque_pressed() -> void:
 func handle_attack_started():
 	btn_prepare.text = "Stop Atack"
 	player_state = "atacando"
-	
+
 func _on_ui_pause_dialog_popup_hide():
 	get_tree().paused = false
 

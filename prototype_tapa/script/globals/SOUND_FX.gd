@@ -3,6 +3,7 @@ extends Node
 onready var button_sound
 
 func _ready() -> void:
+	self.set_pause_mode(2) # Set pause mode to Process
 	# Creamos un nodo AudioSetramPlayer
 	button_sound = AudioStreamPlayer.new()
 	button_sound.set_bus("Buttons")

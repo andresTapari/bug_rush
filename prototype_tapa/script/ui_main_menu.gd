@@ -23,6 +23,6 @@ func _on_Button_exit_pressed() -> void:
 	# Guardar progreso
 	get_tree().quit()
 
-
 func _on_Button_setup_pressed() -> void:
+	$Setup_dialog.popup_centered()
 	SOUND_FX.button_play("acept")

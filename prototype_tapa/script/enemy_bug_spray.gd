@@ -8,9 +8,9 @@ onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 
 # Escenas:
 onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
+onready var EXPLOSION = preload ('res://scenes/unit_explosion.tscn')
 
 # Variables:
-
 var type
 var u_name: String
 var total_health :float
@@ -21,7 +21,6 @@ var armor : float
 var score: int
 var targets_to_attack: Array = []
 var weapon_enable: bool = true
-
 
 func _ready() -> void:
 	type 			= UNIT_STATS.enemy_type_3["Type"]
@@ -34,14 +33,6 @@ func _ready() -> void:
 	actual_health = total_health
 	$Timer.wait_time = fire_rate
 
-#func _process(delta: float) -> void:
-#	if !targets_to_attack.empty() and $Timer.is_stopped():
-#		$Position3D/CPUParticles.emitting = true
-#		$Timer.start()
-#	elif targets_to_attack.empty():
-#		$Position3D/CPUParticles.emitting = false
-#		$Timer.stop()
-
 func hurt(_damage: float) -> void:
 	actual_health = actual_health - _damage
 	HealthBarr.update_bar(actual_health,total_health)
@@ -50,6 +41,10 @@ func hurt(_damage: float) -> void:
 	h.transform = self.global_transform
 	get_parent().add_child(h)
 	if actual_health <= 0:
+		var E = EXPLOSION.instance()
+		E.set_type(false)
+		E.transform = self.global_transform
+		get_parent().add_child(E)
 		emit_signal("enemy_unit_destroyed",self)
 		queue_free()
  
