@@ -48,5 +48,6 @@ visible = false
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2.20708, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Fx"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

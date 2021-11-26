@@ -46,5 +46,6 @@ one_shot = true
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Fx"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
