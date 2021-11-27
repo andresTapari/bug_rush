@@ -7,7 +7,8 @@ enum classes {	unit_type_1, 	#0
 #				unit_type_n,	#n
 				enemy_type_1,	#3
 				enemy_type_2,	#4
-				enemy_type_3	#5
+				enemy_type_3,	#5
+				enemy_type_4,	#6
 				}
 
 # Definición de unidades:
@@ -57,16 +58,6 @@ var special_unit_type_1 = {
 					"Range": 5,
 					"price": 2
 }
-#var unit_type_3 = 	{
-#					"Type": classes.unit_type_3,
-#					"Name": "unit_3",
-#					"Health": 5,
-#					"Damage": 7,
-#					"Armor": 0,
-#					"Speed": 6,
-#					"Lvl":1,
-#					"price": 1
-#					}
 
 # Enemy Brick
 var enemy_type_1 = {
@@ -96,10 +87,35 @@ var enemy_type_2 = {
 					"Score": 200
 }
 
+#var unit_type_3 = 	{
+#					"Type": classes.unit_type_3,
+#					"Name": "unit_3",
+#					"Health": 5,
+#					"Damage": 7,
+#					"Armor": 0,
+#					"Speed": 6,
+#					"Lvl":1,
+#					"price": 1
+#					}
+
 # Enemy Bug Spray
 var enemy_type_3 = {
 					"Type": classes.enemy_type_3,
 					"Name": "Bug Spray",
+					"Health": 10,
+					"Damage": 3,
+					"Armor": 0,
+					"Speed": 0,
+					"FR": 0.5,
+					"Lvl":1,
+					"price": 0,
+					"Score": 200
+}
+
+# Enemy Bug Spray
+var enemy_type_4 = {
+					"Type": classes.enemy_type_4,
+					"Name": "Payana",
 					"Health": 10,
 					"Damage": 3,
 					"Armor": 0,
