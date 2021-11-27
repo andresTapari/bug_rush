@@ -2,10 +2,7 @@ extends Spatial
 
 # Nodos:
 onready var lvl_progress = get_node('ui_hud/VBoxContainer/TextureProgress')
-#onready var signal_connect_fence = get_node("res://scenes/enemy_fence.tscn")
-#onready var signal_connect_tower = get_node("res://scenes/enemy_tower.tscn")
-#onready var signal_connect_unit = get_node("res://scenes/unit.tscn")
-#onready var signal_connect_SP_unit = get_node("res://scenes/special_unit.tscn")
+
 # Variables
 var player_units: 		Array = []
 var enemy_units: 		Array = []
