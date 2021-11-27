@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://script/HeatlBarr2D.gd" type="Script" id=1]
-[ext_resource path="res://assets/texture/health_barr/barHorizontal_green_mid 200.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/health_barr/health_bar_mid_green.png" type="Texture" id=2]
+[ext_resource path="res://assets/texture/health_barr/health_bar_bottom.png" type="Texture" id=3]
+[ext_resource path="res://assets/texture/health_barr/health_bar_top.png" type="Texture" id=4]
 
 [node name="HealthBarr2D" type="TextureProgress"]
-margin_right = 200.0
-margin_bottom = 40.0
+margin_right = 100.0
+margin_bottom = 20.0
 max_value = 10.0
 value = 10.0
-texture_progress = ExtResource( 3 )
+texture_under = ExtResource( 3 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

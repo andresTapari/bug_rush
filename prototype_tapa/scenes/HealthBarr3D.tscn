@@ -9,7 +9,7 @@ viewport_path = NodePath("Viewport")
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 200, 40 )
+size = Vector2( 100, 20 )
 transparent_bg = true
 
 [node name="HealthBarr2D" parent="Viewport" instance=ExtResource( 2 )]

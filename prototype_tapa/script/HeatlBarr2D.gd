@@ -1,8 +1,8 @@
 extends TextureProgress
 
-var bar_green 	= preload("res://assets/texture/health_barr/barHorizontal_green_mid 200.png")
-var bar_red 	= preload("res://assets/texture/health_barr/barHorizontal_red_mid 200.png")
-var bar_yellow 	= preload("res://assets/texture/health_barr/barHorizontal_yellow_mid 200.png")
+var bar_green 	= preload("res://assets/texture/health_barr/health_bar_mid_green.png")
+var bar_red 	= preload("res://assets/texture/health_barr/health_bar_mid_red.png")
+var bar_yellow 	= preload("res://assets/texture/health_barr/health_bar_mid_orange.png")
 
 func _ready() -> void:
 	hide()
