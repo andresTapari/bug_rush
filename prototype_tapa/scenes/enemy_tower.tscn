@@ -104,7 +104,7 @@ shape = SubResource( 7 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="HealthBarr3D" parent="." instance=ExtResource( 2 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 3.48117, 0 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 4.02417, 0 )
 
 [node name="tank_1_bottom" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 0.919286, 0 )
