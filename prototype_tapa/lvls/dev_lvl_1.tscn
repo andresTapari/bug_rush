@@ -86,4 +86,4 @@ transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183,
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 23.5056, 1.34107, 0 )
 
 [node name="StaticBody4" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.93685, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.93685, 0 )

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform sampler2D uv_offset_texture: hint_black;
+uniform vec2 uv_offset_scale = vec2(-0.2,-0.1);
+uniform vec2 time_scale = vec2(0.3,0.0);
+
+void vertex(){
+	vec2 base_uv_offset = UV * uv_offset_scale;
+	float noise = texture (uv_offset_texture, UV).r;
+	base_uv_offset += TIME * time_scale; 
+	VERTEX.y += noise;
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+period = 256.0
+persistence = 0.833
+
+[sub_resource type="NoiseTexture" id=3]
+noise = SubResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/uv_offset_scale = Vector2( -0.2, -0.1 )
+shader_param/time_scale = Vector2( 0.3, 0 )
+shader_param/uv_offset_texture = SubResource( 3 )
+
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 1, 1 )
+subdivide_width = 32
+subdivide_depth = 32
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 5 )
+material/0 = null
