@@ -1,6 +1,5 @@
 extends WindowDialog
 
-
 #Señales:
 signal spawn_units(army_list)
 signal attack_started
