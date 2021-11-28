@@ -13,6 +13,7 @@ var score_counter: 	int  = 0
 var coins_counter:	int  = 0
 var victory_flag:	bool = false
 var stars_counter:  int = 0
+
 func _ready():
 	hide()
 
@@ -106,17 +107,20 @@ func _on_Buton_main_menu_pressed() -> void:
 
 
 func _on_Button_next_lvl_pressed() -> void:
+	var lvl_selection: String
 	SOUND_FX.button_play("acept")
 	get_tree().paused = false
-	var current_lvl = LVL_MASTER.player_info["current_lvl"]
-	var lvl_selection = LVL_MASTER.lvl_path(current_lvl+1)
+	if get_parent().current_lvl == LVL_MASTER.player_info["current_lvl_index"]:
+		if LVL_MASTER.player_info["current_lvl_index"] <= 6:
+			LVL_MASTER.player_info["current_lvl_index"] +=1
+			lvl_selection = LVL_MASTER.lvl_path(LVL_MASTER.player_info["current_lvl_index"])
+	else:
+			lvl_selection = LVL_MASTER.lvl_path(get_parent().current_lvl + 1)
 	# warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
 
-
 func _on_PopupDialog_about_to_show():
 	pass
-
 
 func _on_PopupDialog_popup_hide():
 	get_tree().paused = false

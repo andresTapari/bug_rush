@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Spawner_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/PNG/Light/texture_07.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Camera_gimbal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://script/dev_lvl_combat.gd" type="Script" id=6]
 [ext_resource path="res://scenes/ui_hud.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemy_payana.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/lvl_assets/grass_1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/lvl_assets/flower_1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/lvl_assets/mushroom_1.tscn" type="PackedScene" id=12]
@@ -20,7 +21,7 @@ uv1_triplanar = true
 
 [node name="dev_lvl_1" type="Spatial"]
 script = ExtResource( 6 )
-index_lvl = 1
+index_lvl = 2
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 use_collision = true
@@ -58,12 +59,6 @@ transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 
 [node name="StaticBody3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 1.00458, 2.28787, -5 )
 
-[node name="StaticBody4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 5.00458, 2.28787, 5 )
-
-[node name="StaticBody5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.999964, 0.00849965, 0, -0.00849965, 0.999964, 0, 0, 0, 1, 5.00458, 2.28787, -5 )
-
 [node name="ui_hud" parent="." instance=ExtResource( 7 )]
 
 [node name="flower_1" parent="." instance=ExtResource( 11 )]
@@ -80,3 +75,9 @@ transform = Transform( 0.673557, 0, -1.34027, 0, 1.5, 0, 1.34027, 0, 0.673557, 1
 
 [node name="mushroom_2" parent="mushroom_1" instance=ExtResource( 12 )]
 transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183, -2.8761, 0, -0.825813 )
+
+[node name="StaticBody4" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.96553, -6 )
+
+[node name="StaticBody5" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.96553, 6 )

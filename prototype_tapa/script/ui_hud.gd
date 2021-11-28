@@ -6,18 +6,20 @@ signal stop_round
 onready var lvl_progress_barr = get_node('VBoxContainer/TextureProgress')
 onready var btn_prepare 	  = get_node('VBoxContainer/btn_preparar_ataque')
 onready var army_generator	  = get_node('ui_army_spawner')
-onready var lvl_counter		  = get_node('MarginContainer/VBoxContainer/HBoxContainer2/Label_lvl_counter')
+onready var lvl_counter		  = get_node('MarginContainer2/VBoxContainer/HBoxContainer2/Label_lvl_counter')
 onready var coins		  	  = get_node('MarginContainer/VBoxContainer/HBoxContainer/Label_coint_counter')
 #onready var score_dialog	  = get_node("ui_score_dialog")
 
 var player_state: String = "preparar"
+var current_lvl: int = 0
 # variables:
 var enemigos: float = 0
 
 func _ready() -> void:
 	army_generator.connect('attack_started',self,"handle_attack_started")
 	lvl_progress_barr.value = 0
-	lvl_counter.text = String(get_parent().index_lvl)
+	current_lvl = get_parent().index_lvl
+	lvl_counter.text = String(current_lvl)
 	coins.text=String(LVL_MASTER.player_info["coins"])
 func _input(event):
 	if  event is InputEventKey and Input.is_action_pressed("pause"):

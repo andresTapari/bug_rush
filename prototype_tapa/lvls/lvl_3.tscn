@@ -19,7 +19,7 @@ uv1_triplanar = true
 
 [node name="dev_lvl_1" type="Spatial"]
 script = ExtResource( 6 )
-index_lvl = 1
+index_lvl = 3
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 use_collision = true
