@@ -16,6 +16,7 @@ var lvl_top_score: 		int = 0
 export var index_lvl: int
 
 func _ready() -> void:
+	$ui_hud.update_score(lvl_score)
 	LVL_MASTER.player_info["current_lvl"]=index_lvl
 	# Señal de ui_hud al lvl
 	# warning-ignore:return_value_discarded
@@ -34,7 +35,6 @@ func _ready() -> void:
 	var enemy_counter: float = 0
 	for element in nodos:
 		if element.is_in_group("enemy"):
-			lvl_top_score += element.score
 			enemy_units.push_front(element)
 			lvl_top_score += element.score
 			enemy_counter += 1 
@@ -62,6 +62,7 @@ func handle_destroy_enemy(_enemy_unit_name):
 			element.set_targets_to_attack(enemy_units)
 	if enemy_units.size() == 0:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,lvl_top_score,true)
+	$ui_hud.update_score(lvl_score)
 
 func handle_destroy_unit(_player_unit_name):
 	player_units.erase(_player_unit_name)

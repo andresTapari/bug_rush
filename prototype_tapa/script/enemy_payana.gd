@@ -64,5 +64,5 @@ func _on_Timer_timeout() -> void:
 		else:
 			targets_to_attack.erase(element)
 
-func _on_Area_body_exited(body: Node) -> void:
+func _on_Area_body_exited(_body: Node) -> void:
 	pass # Replace with function body.

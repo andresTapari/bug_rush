@@ -12,6 +12,7 @@ onready var label_coins = get_node('MarginContainer/VBoxContainer/HBoxContainer/
 
 func _ready() -> void:
 #	popup()
+	handle_update_coins_counter()
 	var units_btn_list = unit_list.get_children()
 	for item in units_btn_list:
 		if item is MarginContainer:

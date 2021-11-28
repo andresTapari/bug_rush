@@ -2,17 +2,18 @@ extends PopupDialog
 
 # Nodos:
 onready var label_victory = get_node('VBoxContainer/Label_victory_defeat')
-onready var label_score   = get_node("VBoxContainer/Label_n_score")
-onready var label_coin    = get_node('VBoxContainer/Label_n_coins')
+onready var label_score   = get_node("VBoxContainer/HBoxContainer3/Label_n_score")
+onready var label_coin    = get_node('VBoxContainer/HBoxContainer4/Label_n_coins')
 onready var btn_next_lvl  = get_node('VBoxContainer/HBoxContainer2/Button_next_lvl')
 
 # Variables:
-var total_score: 	int  = 0
-var top_score: 		int  = 0
-var score_counter: 	int  = 0
-var coins_counter:	int  = 0
-var victory_flag:	bool = false
-var stars_counter:  int = 0
+var total_score: 	int     = 0
+var top_score: 		int     = 0
+var score_counter: 	int     = 0
+var coins_counter:	float   = 0.0
+var victory_flag:	bool    = false
+var stars_counter:  int     = 0
+var top_coin:		float	= 0.0
 
 func _ready():
 	hide()
@@ -20,11 +21,14 @@ func _ready():
 # Funciones:
 func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool) -> void:
 	show()
+	score_counter = _total_score
+	label_score.text = String(score_counter)
 	$Timer_Score.start()
 	total_score 	= _total_score
 	top_score		= _top_score
 	victory_flag	= _victory_flag
-	
+	top_coin		= float(_total_score)*LVL_MASTER.player_info["coin_factor"]
+
 	if _victory_flag:
 		label_victory.text = "¡VICTORY!"
 	else:
@@ -61,24 +65,25 @@ func update_player_info()-> void:
 	if victory_flag:
 		LVL_MASTER.lvl_info(index+1)["lvl_unloqued"]=true
 		LVL_MASTER.player_info["score"] += score_counter
-		LVL_MASTER.player_info["coins"] += score_counter
+		LVL_MASTER.player_info["coins"] += coins_counter
 
 func _on_Timer_Score_timeout():
-	if total_score > score_counter:
-		score_counter += 5
+	if 0 < score_counter:
+		score_counter -= 5
+		coins_counter += LVL_MASTER.player_info["coin_factor"]*5
 		label_score.text = String(score_counter)
-		if top_score * 0.8 < score_counter:
+		label_coin.text  = String(int(coins_counter))
+		if top_coin * 0.8 < coins_counter:
 			$VBoxContainer/HBoxContainer/CheckBox_1.pressed = true
 			stars_counter += 1
-		if top_score * 0.9 < score_counter:
+		if top_coin * 0.9 < coins_counter:
 			$VBoxContainer/HBoxContainer/CheckBox_2.pressed = true
 			stars_counter += 1
-		if top_score == score_counter:
+		if top_coin == coins_counter:
 			$VBoxContainer/HBoxContainer/CheckBox_3.pressed = true
 			stars_counter += 1
 	else:
 		$Timer_Score.stop()
-		label_coin = String(score_counter)
 		update_player_info()
 		$VBoxContainer/HBoxContainer2/Button_next_lvl.disabled = !victory_flag
 		get_tree().paused = true
