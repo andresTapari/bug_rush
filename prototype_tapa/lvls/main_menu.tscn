@@ -153,9 +153,12 @@ margin_bottom = 164.0
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -64.0
-margin_right = 476.0
+margin_left = 8.0
+margin_top = -72.0
+margin_right = 484.0
+margin_bottom = -8.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -198,10 +201,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -226.0
-margin_top = -64.0
-margin_right = 6.10352e-05
+margin_left = -232.0
+margin_top = -72.0
+margin_right = -5.99982
+margin_bottom = -8.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
