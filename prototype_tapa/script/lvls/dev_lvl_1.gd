@@ -141,7 +141,7 @@ func spawn(_stats) -> Node:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var u=null
-	if _stats["Name"]=="special_unit_type_1":
+	if _stats["Type"] == UNIT_STATS.classes.special_unit_type_1:
 		u = SPECIAL_UNIT.instance()
 	else:
 		u = UNIT.instance()

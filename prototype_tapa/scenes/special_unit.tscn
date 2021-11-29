@@ -1,25 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/HealthBarr3D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/special_unit.gd" type="Script" id=2]
 [ext_resource path="res://assets/3d_models/enemy_units/bomber_bettle/bomber_bettle_mesh.tscn" type="PackedScene" id=3]
 [ext_resource path="res://script/unit_mesh.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="CylinderShape" id=1]
 radius = 0.1
 height = 2.43914
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_unshaded = true
-albedo_texture = ExtResource( 5 )
-uv1_scale = Vector3( 0.5, 0.5, 0 )
-uv1_offset = Vector3( 0.5, 0.5, 1 )
-uv1_triplanar = true
-
-[sub_resource type="CylinderMesh" id=3]
-material = SubResource( 2 )
-height = 2.45
 
 [sub_resource type="CylinderShape" id=4]
 radius = 5.0
@@ -44,13 +32,8 @@ cast_to = Vector3( 2, 0, 0 )
 [node name="Mesh" type="Spatial" parent="."]
 script = ExtResource( 4 )
 
-[node name="unit_type_1" parent="Mesh" instance=ExtResource( 3 )]
+[node name="unit_type_4" parent="Mesh" instance=ExtResource( 3 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
-
-[node name="debug_colision" type="MeshInstance" parent="Mesh"]
-visible = false
-mesh = SubResource( 3 )
-material/0 = null
 
 [node name="Tween" type="Tween" parent="."]
 

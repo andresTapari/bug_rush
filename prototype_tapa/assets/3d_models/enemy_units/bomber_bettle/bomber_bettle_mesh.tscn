@@ -16,7 +16,7 @@ surfaces/0 = {
 "vertex_count": 3280
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 resource_name = "atack"
 length = 1.66667
 tracks/0/type = "transform"
@@ -132,7 +132,7 @@ tracks/15/imported = true
 tracks/15/enabled = true
 tracks/15/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.0423708, 0.00491524, -0.0107607, 0.999032, 1, 1, 1, 1.66667, 1, 0, 0, 0, -0.0423708, 0.00491524, -0.0107607, 0.999032, 1, 1, 1 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "walk"
 length = 1.66667
 tracks/0/type = "transform"
@@ -255,5 +255,5 @@ mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="1"]
-anims/atack = SubResource( 5 )
-anims/walk = SubResource( 4 )
+anims/atack = SubResource( 2 )
+anims/walk = SubResource( 3 )

@@ -71,8 +71,8 @@ func _physics_process(delta):
 				hurt(total_health)
 #				queue_free()
 			$Timer.start()
-#		else:
-#			$Mesh.set_animation("walk")	
+		else:
+			$Mesh.set_animation("walk")	
 	else:
 		$Mesh.set_animation("walk")	
 	velocity.y += gravity * delta

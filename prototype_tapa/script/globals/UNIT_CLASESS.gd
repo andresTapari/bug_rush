@@ -3,7 +3,7 @@ extends Node
 enum classes {	unit_type_1, 	#0
 				unit_type_2,	#1
 				unit_type_3,	#2
-				special_unit_type_1 #4
+				special_unit_type_1, #4
 #				unit_type_n,	#n
 				enemy_type_1,	#3
 				enemy_type_2,	#4
@@ -31,7 +31,7 @@ var unit_type_2 = {
 					"Name": 'Tank Bettle',
 					"Health": 20,
 					"Damage": 1, 
-					"Armor": 5, 
+					"Armor": 10, 
 					"Speed": 3,
 					"Lvl":1,
 					"price":2,
@@ -47,19 +47,19 @@ var unit_type_3 = 	{
 					"Armor": 0,
 					"Speed": 6,
 					"Lvl":1,
-					"price": 1,
+					"price": 5,
 					"icon_path":"res://assets/thumbnail/unit_type_3.png"
 					}
 					
 var special_unit_type_1 = {
 					"Type": classes.special_unit_type_1,
-					"Name": "special_unit_type_1",
-					"Health":5,
+					"Name": "Bomber Bettle",
+					"Health":10,
 					"Damage":10,
 					"Armor": 0,
 					"Speed": 9,
-					"Range": 5,
-					"price": 2,
+					"Range": 3,
+					"price": 10,
 					"icon_path":"res://assets/thumbnail/unit_type_4.png"
 }
 

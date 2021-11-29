@@ -22,13 +22,14 @@ signal player_unit_destroyed(_value)
 var target_to_move: NodePath
 var velocity: Vector3    		= Vector3.ZERO
 var targets_to_attack:Array 	= [] setget set_targets_to_attack
-var targets_in_range: Array = []
+var targets_in_range: Array 	= []
 var target						= null
 var actual_health:float			= total_health
 var target_pos: Vector3 		= Vector3()
 var ready_to_hit: bool 			= true
 
 func _ready() -> void:
+	$Mesh.set_current_mesh_animation($Mesh/unit_type_4/AnimationPlayer)
 	#Ajuste de cajas de colision
 	tween.interpolate_property($CollisionShape.get_shape(),
 								"radius", 0.01, 1, 1,
@@ -36,7 +37,7 @@ func _ready() -> void:
 								Tween.EASE_IN_OUT,
 								0)
 	tween.start()
-	$Mesh.set_current_mesh_animation($Mesh/unit_type_1/AnimationPlayer)
+
 
 func _physics_process(delta):
 	if !targets_to_attack.empty():

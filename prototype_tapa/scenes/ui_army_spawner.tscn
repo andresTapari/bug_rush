@@ -7,7 +7,6 @@
 [ext_resource path="res://script/ui_army_spawner.gd" type="Script" id=5]
 
 [node name="ui_army_spawner" type="WindowDialog"]
-visible = true
 margin_right = 432.0
 margin_bottom = 485.0
 rect_min_size = Vector2( 432, 0 )
