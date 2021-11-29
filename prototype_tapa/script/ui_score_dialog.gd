@@ -67,7 +67,7 @@ func update_player_info()-> void:
 		LVL_MASTER.lvl_info(index+1)["lvl_unloqued"]=true
 		LVL_MASTER.player_info["score"] += score_counter
 		LVL_MASTER.player_info["coins"] += coins_counter
-
+	
 func _on_Timer_Score_timeout():
 	if 0 < score_counter:
 		score_star +=5
@@ -121,6 +121,8 @@ func _on_Button_next_lvl_pressed() -> void:
 		if LVL_MASTER.player_info["current_lvl_index"] <= 6:
 			LVL_MASTER.player_info["current_lvl_index"] +=1
 			lvl_selection = LVL_MASTER.lvl_path(LVL_MASTER.player_info["current_lvl_index"])
+		if LVL_MASTER.player_info["current_lvl_index"] == 7:
+			LVL_MASTER.player_info["victory_flag"] = true
 	else:
 			lvl_selection = LVL_MASTER.lvl_path(get_parent().current_lvl + 1)
 	# warning-ignore:return_value_discarded

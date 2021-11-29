@@ -42,3 +42,13 @@ func _on_Button_pressed():
 		hide()
 	else:
 		SOUND_FX.button_play("back/cancel")
+
+func units_in_queue() -> bool:
+	var units_btn_list = unit_list.get_children()
+	for item in units_btn_list:
+		if item is MarginContainer:
+			var value = item.get_unit_info()
+			total_units += value["Amount"]
+	if total_units != 0:
+		return true
+	return false
