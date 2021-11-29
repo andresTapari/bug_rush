@@ -102,3 +102,11 @@ func clear_all_stats()->void:
 		element["lvl_unloqued"] = false
 	lvl_1_info["lvl_unloqued"]  = true
 	player_info = player_default_stats.duplicate(true)
+
+func get_total_score() -> int:
+	var total_score: int = 0
+	var list_of_lvls:Array = [lvl_1_info,lvl_2_info,lvl_3_info,
+							  lvl_4_info,lvl_5_info,lvl_6_info]
+	for element in list_of_lvls:
+		total_score += element["score"]
+	return total_score

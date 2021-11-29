@@ -7,6 +7,7 @@ func _ready() -> void:
 	for item in buttons:
 		i += 1
 		item.update_status(i)
+	$MarginContainer2/HBoxContainer/Label3.text = String(LVL_MASTER.get_total_score())
 
 func _on_Button_main_menu_pressed() -> void:
 	SOUND_FX.button_play("back/cancel")

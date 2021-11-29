@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/ui_lvl_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/ui_lvl_selection.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -23,9 +24,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -244.0
-margin_right = 244.0
-margin_bottom = 112.0
+margin_left = -243.655
+margin_top = 181.033
+margin_right = 244.345
+margin_bottom = 293.033
+rect_pivot_offset = Vector2( 46, -103.839 )
 custom_fonts/font = SubResource( 1 )
 text = "SELECT LEVEL:"
 __meta__ = {
@@ -38,10 +41,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -361.0
-margin_top = -84.0
+margin_top = 21.9529
 margin_right = 361.0
-margin_bottom = 84.0
+margin_bottom = 189.953
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -102,10 +106,57 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -96.0
-margin_top = 134.0
+margin_top = 229.862
 margin_right = 101.0
-margin_bottom = 171.0
+margin_bottom = 266.862
+custom_fonts/font = ExtResource( 4 )
 text = "MAIN MENU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+margin_left = -358.12
+margin_top = -245.561
+margin_right = 343.88
+margin_bottom = -133.561
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+margin_right = 702.0
+margin_bottom = 112.0
+
+[node name="Label2" type="Label" parent="MarginContainer2/HBoxContainer"]
+margin_right = 416.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 46, -103.839 )
+custom_fonts/font = SubResource( 1 )
+text = "Total Score:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/HBoxContainer"]
+margin_left = 420.0
+margin_right = 498.0
+margin_bottom = 112.0
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="MarginContainer2/HBoxContainer"]
+margin_left = 502.0
+margin_right = 702.0
+margin_bottom = 112.0
+rect_pivot_offset = Vector2( 46, -103.839 )
+custom_fonts/font = SubResource( 1 )
+text = "00000"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
