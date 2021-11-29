@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://script/ui_main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/ui_setup_dialog.tscn" type="PackedScene" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/ui_hud_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/texture/icon/git_logo.png" type="Texture" id=7]
+[ext_resource path="res://assets/texture/icon/icon_godot.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 96
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -15,8 +17,8 @@ font_data = ExtResource( 1 )
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.88776
-margin_right = 1.8877
+margin_right = -6.10352e-05
+rect_pivot_offset = Vector2( -313.888, 444 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -25,9 +27,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -269.0
-margin_right = 269.0
-margin_bottom = 135.0
+margin_left = -355.0
+margin_right = 355.0
+margin_bottom = 270.0
 custom_fonts/font = SubResource( 1 )
 text = "BUG RUSH"
 align = 1
@@ -40,84 +42,106 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -80.0
-margin_top = -58.0
-margin_right = 80.0
-margin_bottom = 58.0
+margin_left = -79.9999
+margin_top = 4.0
+margin_right = 80.0001
+margin_bottom = 222.0
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+anchor_top = 0.33945
+anchor_bottom = 0.33945
+margin_top = -74.0
 margin_right = 160.0
-margin_bottom = 193.0
+margin_bottom = 144.0
 
 [node name="Button_new_game" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_right = 160.0
-margin_bottom = 29.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 3 )
 text = "NEW GAME"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 33.0
+margin_top = 38.0
 margin_right = 3.0
-margin_bottom = 37.0
+margin_bottom = 42.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Button_continue" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 41.0
+margin_top = 46.0
 margin_right = 160.0
-margin_bottom = 70.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 3 )
 disabled = true
 text = "CONTINUE"
 
 [node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 74.0
+margin_top = 84.0
 margin_right = 3.0
-margin_bottom = 78.0
+margin_bottom = 88.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Button_lvl_selection" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 82.0
+margin_top = 92.0
 margin_right = 160.0
-margin_bottom = 111.0
+margin_bottom = 126.0
 custom_fonts/font = ExtResource( 3 )
 text = "LVL SELECTION"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 115.0
+margin_top = 130.0
 margin_right = 3.0
-margin_bottom = 119.0
+margin_bottom = 134.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Button_setup" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 123.0
+margin_top = 138.0
 margin_right = 160.0
-margin_bottom = 152.0
+margin_bottom = 172.0
 custom_fonts/font = ExtResource( 3 )
 text = "SETUP"
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 156.0
+margin_top = 176.0
 margin_right = 3.0
-margin_bottom = 160.0
+margin_bottom = 180.0
 size_flags_horizontal = 2
 size_flags_vertical = 3
 
 [node name="Button_exit" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 164.0
+margin_top = 184.0
 margin_right = 160.0
-margin_bottom = 193.0
+margin_bottom = 218.0
 custom_fonts/font = ExtResource( 3 )
 text = "EXIT"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -319.0
+margin_top = -72.5
+margin_right = 319.0
+margin_bottom = -25.5
+custom_fonts/normal_font = ExtResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center] a game by [wave amp=50 ] [color=#0000ff] AndresTapa [/color][/wave] and [wave amp=50][color=#700404] FaLoX[/color][/wave] [/center]"
+text = " a game by   AndresTapa  and  FaLoX "
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Setup_dialog" parent="." instance=ExtResource( 4 )]
 anchor_left = 0.5
@@ -129,12 +153,94 @@ margin_top = -164.0
 margin_right = 128.0
 margin_bottom = 164.0
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 38.1122, 560 )
-texture = ExtResource( 5 )
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+margin_right = 476.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+margin_right = 476.0
+margin_bottom = 64.0
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer2/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 68.0
+margin_right = 72.0
+margin_bottom = 64.0
+
+[node name="godot_engine" type="RichTextLabel" parent="MarginContainer2/HBoxContainer"]
+margin_left = 76.0
+margin_right = 476.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "Made in [url=https://godotengine.org]GODOT[/url]  for GAMEOFF 2021"
+text = "Made in GODOT  for GAMEOFF 2021"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -226.0
+margin_top = -64.0
+margin_right = 6.10352e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer3"]
+margin_right = 226.0
+margin_bottom = 64.0
+
+[node name="git_repo" type="RichTextLabel" parent="MarginContainer3/HBoxContainer"]
+margin_right = 150.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 150, 0 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right][url=https://github.com/andresTapari/bug_rush]Git Repository[/url]  "
+text = "Git Repository  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer3/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 154.0
+margin_right = 158.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer3/HBoxContainer"]
+margin_left = 162.0
+margin_right = 226.0
+margin_bottom = 64.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_new_game" to="." method="_on_Button_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_continue" to="." method="_on_Button_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_lvl_selection" to="." method="_on_Button_lvl_selection_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_setup" to="." method="_on_Button_setup_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_exit" to="." method="_on_Button_exit_pressed"]
+[connection signal="meta_clicked" from="MarginContainer2/HBoxContainer/godot_engine" to="." method="_on_godot_engine_meta_clicked"]
+[connection signal="meta_clicked" from="MarginContainer3/HBoxContainer/git_repo" to="." method="_on_git_repo_meta_clicked"]

@@ -6,7 +6,7 @@ func _ready() -> void:
 	if LVL_MASTER.player_info["coins"] == 0:
 		$MarginContainer/VBoxContainer/Button_continue.disabled = true
 		$MarginContainer/VBoxContainer/Button_lvl_selection.disabled = true
-
+	
 # Señales:
 func _on_Button_play_pressed() -> void:
 	SOUND_FX.button_play("acept")
@@ -35,3 +35,13 @@ func _on_Button_new_game_pressed() -> void:
 	var current_lvl = LVL_MASTER.player_info["current_lvl_index"]
 	#warning-ignore:return_value_discarded
 	get_tree().change_scene(LVL_MASTER.lvl_path(current_lvl))
+
+
+func _on_git_repo_meta_clicked(meta) -> void:
+	#warning-ignore:return_value_discarded
+	OS.shell_open(meta)
+
+
+func _on_godot_engine_meta_clicked(meta) -> void:
+	#warning-ignore:return_value_discarded
+	OS.shell_open(meta)

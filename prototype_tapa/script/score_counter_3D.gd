@@ -1,6 +1,6 @@
 extends Spatial
 
-var vel = 5
+var vel = 10
 
 func _process(_delta) -> void:
 	transform.origin += vel * Vector3(0,1,0) * _delta

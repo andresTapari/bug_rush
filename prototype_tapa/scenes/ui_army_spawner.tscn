@@ -78,8 +78,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
-margin_right = 331.0
-margin_bottom = 568.0
+margin_right = 334.0
+margin_bottom = 588.0
 
 [node name="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource( 4 )]
 

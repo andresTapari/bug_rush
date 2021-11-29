@@ -74,7 +74,10 @@ func _on_Timer_Score_timeout():
 		score_counter -= 5
 		coins_counter += LVL_MASTER.player_info["coin_factor"]*5
 		label_score.text = String(score_counter)
+		if int(label_coin.text) != coins_counter:
+			$AudioStreamPlayer.play()
 		label_coin.text  = String(int(coins_counter))
+		
 		if top_score * 0.8 < score_star:
 			$VBoxContainer/HBoxContainer/CheckBox_1.pressed = true
 			stars_counter += 1
