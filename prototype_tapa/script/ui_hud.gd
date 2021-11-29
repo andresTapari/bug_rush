@@ -60,3 +60,11 @@ func _on_ui_pause_dialog_about_to_show():
 
 func _on_ui_score_dialog_visibility_changed():
 	get_tree().paused = !get_tree().paused
+
+
+func _on_Control_mouse_entered() -> void:
+	$Mouse_icon.modulate = Color(1,1,1,1)
+
+
+func _on_Control_mouse_exited() -> void:
+	$Mouse_icon.modulate = Color(1,1,1,0.2)

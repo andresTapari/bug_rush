@@ -44,6 +44,8 @@ func _on_Button_pressed():
 		SOUND_FX.button_play("back/cancel")
 
 func units_in_queue() -> bool:
+	#avoid game over when spend all coins but loose focus on army
+	#generator
 	var units_btn_list = unit_list.get_children()
 	for item in units_btn_list:
 		if item is MarginContainer:
