@@ -4,12 +4,12 @@ export var index: int = 1
 
 func _ready() -> void:
 	$Button/VBoxContainer/Label_lvl.text = "Lvl: " + String(index)
-
+	
 # Funciones
 func update_status(_index):
 	
 	var dictionary = LVL_MASTER.lvl_info(_index)
-	
+	$Button/VBoxContainer/TextureRect.texture = load(dictionary["icon_path"])
 	if dictionary["lvl_unloqued"]:
 			$Button.disabled = false
 		

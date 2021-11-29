@@ -20,7 +20,7 @@ albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 0.2, 0.2, 0.2 )
 uv1_triplanar = true
 
-[node name="dev_lvl_1" type="Spatial"]
+[node name="dev_lvl_4" type="Spatial"]
 script = ExtResource( 6 )
 index_lvl = 4
 
@@ -70,6 +70,9 @@ transform = Transform( 1.49678, 0, 0.098261, 0, 1.5, 0, -0.098261, 0, 1.49678, 1
 
 [node name="mushroom_2" parent="mushroom_1" instance=ExtResource( 12 )]
 transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183, -2.8761, 0, -0.825813 )
+
+[node name="mushroom_3" parent="mushroom_1" instance=ExtResource( 12 )]
+transform = Transform( 0.00235637, 0, -0.499995, 0, 0.5, 0, 0.499995, 0, 0.00235637, -18.8316, 0, 8.14825 )
 
 [node name="enemy_bug_spray" parent="." instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1, 3 )

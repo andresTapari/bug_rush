@@ -13,7 +13,7 @@ var player_default_stats: Dictionary
 var lvl_1_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_1_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":true
 }
@@ -21,7 +21,7 @@ var lvl_1_info ={
 var lvl_2_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_2_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":false
 }
@@ -29,28 +29,28 @@ var lvl_2_info ={
 var lvl_3_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_3_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":false
 }
 var lvl_4_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_4_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":false
 }
 var lvl_5_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_5_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":false
 }
 var lvl_6_info ={
 				"score": 0,
 				"coins": 0,
-				"icon_path": "",
+				"icon_path": "res://assets/thumbnail/lvl_6_thumbnail.png",
 				"stars": 0,
 				"lvl_unloqued":false
 }

@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Spawner_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/texture/PNG/Light/texture_07.png" type="Texture" id=2]
 [ext_resource path="res://scenes/enemy_payana.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/3d_models/enemy_units/bug_spray.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Camera_gimbal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://script/dev_lvl_combat.gd" type="Script" id=6]
 [ext_resource path="res://scenes/ui_hud.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/enemy_tower.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/enemy_fence.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/lvl_assets/grass_1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/lvl_assets/flower_1.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/lvl_assets/mushroom_1.tscn" type="PackedScene" id=12]
@@ -70,64 +72,94 @@ transform = Transform( -0.378697, 0, 0.32648, 0, 0.5, 0, -0.32648, 0, -0.378697,
 transform = Transform( -0.378697, 0, 0.32648, 0, 0.5, 0, -0.32648, 0, -0.378697, -13.3266, 2.5097, 7.58405 )
 
 [node name="mushroom_1" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1.05504, 0, -1.06626, 0, 1.5, 0, 1.06626, 0, 1.05504, 23.0399, -0.0595856, -3.76349 )
+transform = Transform( 1.05504, 0, -1.06626, 0, 1.5, 0, 1.06626, 0, 1.05504, 23.0399, -0.0595856, -10.7635 )
 
 [node name="mushroom_2" parent="mushroom_1" instance=ExtResource( 12 )]
-transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183, -2.8761, 0, -0.825813 )
+transform = Transform( -0.43183, 0, -0.252038, 0, 0.5, 0, 0.252038, 0, -0.43183, -2.8761, 0, -0.825812 )
 
 [node name="enemy_tower" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.52481, 1.78678, -3 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.47519, 1.78678, -3 )
 
 [node name="enemy_tower2" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.47519, 1.78678, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.47519, 1.78678, 0 )
 
 [node name="enemy_tower3" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.52481, 1.78678, 3 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.47519, 1.78678, 3 )
 
 [node name="enemy_tower4" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.05009, 1.78678, -5 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0500898, 1.78678, -5 )
 
 [node name="enemy_tower5" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.05009, 1.78678, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0500898, 1.78678, 0 )
 
 [node name="enemy_tower6" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.05009, 1.78678, 5 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0500898, 1.78678, 5 )
 
 [node name="enemy_tower7" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1.78678, -3 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.78678, -3 )
 
 [node name="enemy_tower10" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1.78678, -8 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.78678, -8 )
 
 [node name="enemy_tower8" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1.78678, 2 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.78678, 2 )
 
 [node name="enemy_tower9" parent="." instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1.78678, 7 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.78678, 7 )
 
 [node name="StaticBody" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, 0 )
 
 [node name="StaticBody2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -3.94832 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -3.94832 )
 
 [node name="StaticBody3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 4.05168 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 4.05168 )
 
 [node name="StaticBody4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -6.94832 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -6.94832 )
 
 [node name="StaticBody5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 8.05168 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 8.05168 )
 
 [node name="StaticBody6" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, -8.94832 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -8.94832 )
 
 [node name="StaticBody7" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 10.0517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10.0517 )
 
 [node name="StaticBody8" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -10.9483 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -10.9483 )
 
 [node name="StaticBody9" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 12.0517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 12.0517 )
+
+[node name="StaticBody10" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, 0 )
+
+[node name="StaticBody11" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, 3 )
+
+[node name="StaticBody12" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, -6 )
+
+[node name="StaticBody16" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, -9 )
+
+[node name="StaticBody13" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, -3 )
+
+[node name="StaticBody14" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, 6 )
+
+[node name="StaticBody15" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.93094, 9 )
+
+[node name="bug_spray" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 1.02763, 0 )
+
+[node name="bug_spray2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 1.02763, -8 )
+
+[node name="bug_spray3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 1.02763, 8 )
