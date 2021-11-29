@@ -36,6 +36,7 @@ func _ready() -> void:
 								Tween.EASE_IN_OUT,
 								0)
 	tween.start()
+	$Mesh.set_current_mesh_animation($Mesh/unit_type_1/AnimationPlayer)
 
 func _physics_process(delta):
 	if !targets_to_attack.empty():
@@ -54,10 +55,13 @@ func _physics_process(delta):
 	if targets_in_range.find(target)!=-1 and targets_to_attack.find(target)!=-1:
 		var temp = target
 		if ready_to_hit and temp.is_in_group("enemy"):
+			$Mesh.set_animation("atack")
 			velocity = Vector3.ZERO
 			shoot()
 			$Timer.start()
 			target=null
+	else:
+		$Mesh.set_animation("walk")	
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
 
