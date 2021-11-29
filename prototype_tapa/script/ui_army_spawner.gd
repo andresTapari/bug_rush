@@ -2,6 +2,7 @@ extends WindowDialog
 
 #Señales:
 signal spawn_units(army_list)
+signal send_total_units(total_units)
 signal attack_started
 
 # Nodos:
@@ -35,8 +36,9 @@ func _on_Button_pressed():
 	#Signal self -> Spawner_player
 	if total_units != 0:
 		SOUND_FX.button_play("acept")
-		emit_signal("spawn_units",army_list,total_units) #<-total units
-		emit_signal("attack_started")
+		emit_signal("spawn_units",army_list) #<-total units
+		emit_signal("send_total_units",total_units)
+		emit_signal('attack_started')
 		hide()
 	else:
 		SOUND_FX.button_play("back/cancel")

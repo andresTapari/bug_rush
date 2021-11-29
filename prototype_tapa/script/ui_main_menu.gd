@@ -3,6 +3,9 @@ extends Control
 func _ready() -> void:
 	if LVL_MASTER.player_info["current_lvl_index"] != 1:
 		$MarginContainer/VBoxContainer/Button_continue.disabled = false
+	if LVL_MASTER.player_info["coins"] == 0:
+		$MarginContainer/VBoxContainer/Button_continue.disabled = true
+		$MarginContainer/VBoxContainer/Button_lvl_selection.disabled = true
 
 # Señales:
 func _on_Button_play_pressed() -> void:

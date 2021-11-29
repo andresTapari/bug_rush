@@ -14,6 +14,7 @@ var coins_counter:	float   = 0.0
 var victory_flag:	bool    = false
 var stars_counter:  int     = 0
 var top_coin:		float	= 0.0
+var score_star:		int     = 0
 
 func _ready():
 	hide()
@@ -30,9 +31,9 @@ func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool) 
 	top_coin		= float(_total_score)*LVL_MASTER.player_info["coin_factor"]
 
 	if _victory_flag:
-		label_victory.text = "¡VICTORY!"
+		label_victory.bbcode_text = "[center][color=green]VICTORY![/color][/center]"
 	else:
-		label_victory.text = "¡DEFEAT!"
+		label_victory.bbcode_text = "[center][color=red]DEFEAT[/color][/center]"
 
 func update_player_info()-> void:
 	var index = LVL_MASTER.player_info["current_lvl"]
@@ -69,17 +70,18 @@ func update_player_info()-> void:
 
 func _on_Timer_Score_timeout():
 	if 0 < score_counter:
+		score_star +=5
 		score_counter -= 5
 		coins_counter += LVL_MASTER.player_info["coin_factor"]*5
 		label_score.text = String(score_counter)
 		label_coin.text  = String(int(coins_counter))
-		if top_coin * 0.8 < coins_counter:
+		if top_score * 0.8 < score_star:
 			$VBoxContainer/HBoxContainer/CheckBox_1.pressed = true
 			stars_counter += 1
-		if top_coin * 0.9 < coins_counter:
+		if top_score * 0.9 < score_star:
 			$VBoxContainer/HBoxContainer/CheckBox_2.pressed = true
 			stars_counter += 1
-		if top_coin == coins_counter:
+		if top_score == score_star:
 			$VBoxContainer/HBoxContainer/CheckBox_3.pressed = true
 			stars_counter += 1
 	else:

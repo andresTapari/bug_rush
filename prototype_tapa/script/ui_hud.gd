@@ -39,11 +39,13 @@ func _on_Button_pressed() -> void:
 
 func _on_btn_preparar_ataque_pressed() -> void:
 	SOUND_FX.button_play("acept")
-	if player_state == "preparar":
-		army_generator.popup()
-	elif player_state == "atacando":
-		emit_signal("stop_round")
-		pass
+	if LVL_MASTER.player_info["coins"] != 0:
+		if player_state == "preparar":
+			army_generator.popup()
+		elif player_state == "atacando":
+			emit_signal("stop_round")
+	else:
+		$ui_game_over_dialog.popup()
 
 func handle_attack_started():
 	coins.text = String(LVL_MASTER.player_info["coins"])

@@ -70,7 +70,7 @@ var enemy_type_1 = {
 					"FR": 0,
 					"Lvl":1,
 					"price": 0,
-					"Score": 50
+					"Score": 10
 }
 
 # Enemy tank
@@ -84,19 +84,8 @@ var enemy_type_2 = {
 					"FR": 1,
 					"Lvl":1,
 					"price": 0,
-					"Score": 200
+					"Score": 50
 }
-
-#var unit_type_3 = 	{
-#					"Type": classes.unit_type_3,
-#					"Name": "unit_3",
-#					"Health": 5,
-#					"Damage": 7,
-#					"Armor": 0,
-#					"Speed": 6,
-#					"Lvl":1,
-#					"price": 1
-#					}
 
 # Enemy Bug Spray
 var enemy_type_3 = {
@@ -123,8 +112,20 @@ var enemy_type_4 = {
 					"FR": 0.5,
 					"Lvl":1,
 					"price": 0,
-					"Score": 200
+					"Score": 100
 }
+
+#var unit_type_n = 	{
+#					"Type": classes.unit_type_n,
+#					"Name": "unit_n",
+#					"Health": 5,
+#					"Damage": 7,
+#					"Armor": 0,
+#					"Speed": 6,
+#					"Lvl":1,
+#					"price": 1
+#					}
+
 # Funciones
 
 func get_unit_stats(_index: int) -> Dictionary:

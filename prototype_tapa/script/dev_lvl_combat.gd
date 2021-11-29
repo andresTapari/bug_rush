@@ -10,6 +10,7 @@ var enemy_units: 		Array = []
 var enemy_deleted: 		int   = 0
 var enemy_units_total:  int   = 0
 var victory_condition:  int   = 1
+var loose_condition: 	int   = 0
 
 var lvl_score: 			int = 0
 var lvl_top_score: 		int = 0
@@ -26,6 +27,10 @@ func _ready() -> void:
 	# warning-ignore:return_value_discarded
 	$ui_hud/ui_army_spawner.connect("spawn_units",$Spawner,"spawn_units")
 	
+	# Señal del army generator hacia el lvl
+	# warning-ignore:return_value_discarded
+	$ui_hud/ui_army_spawner.connect("send_total_units",self,"handle_total_units")
+
 	# Señal del spawner al lvl
 	# warning-ignore:return_value_discarded
 	$Spawner.connect("attack_start",self,"set_targets")
@@ -66,7 +71,8 @@ func handle_destroy_enemy(_enemy_unit_name):
 
 func handle_destroy_unit(_player_unit_name):
 	player_units.erase(_player_unit_name)
-	if player_units.size() == 0:
+	loose_condition -= 1
+	if loose_condition == 0:
 		if enemy_units.size() <= victory_condition:
 			$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 														lvl_top_score,true)
@@ -80,3 +86,6 @@ func stop_round():
 	else:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 													lvl_top_score,false)
+
+func handle_total_units(_value: int) -> void:
+	loose_condition = _value

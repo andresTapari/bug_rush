@@ -6,7 +6,7 @@ onready var HealthBarr 	= get_node('HealthBarr3D/Viewport/HealthBarr2D')
 # Escenas:
 onready var HIT_COUNTER = preload('res://scenes/hit_counter_3D.tscn')
 onready var EXPLOSION = preload('res://scenes/unit_explosion.tscn')
-
+onready var SCORE_COUNTER = preload('res://scenes/score_counter_3D.tscn')
 # Señales:
 signal enemy_unit_destroyed
 
@@ -47,6 +47,10 @@ func hurt(_damage: float) -> void:
 		E.set_type(false)
 		E.transform = self.global_transform
 		get_parent().add_child(E)
+		var S = SCORE_COUNTER.instance()
+		S.set_score(score)
+		S.transform = self.global_transform
+		get_parent().add_child(S)
 		emit_signal("enemy_unit_destroyed",self)
 		queue_free()
 

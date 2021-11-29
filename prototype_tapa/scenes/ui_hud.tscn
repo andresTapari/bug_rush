@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/texture/lvl_barr/top.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui_army_spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/ui_hud.gd" type="Script" id=3]
 [ext_resource path="res://script/ui_lvl_bar.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ui_score_dialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/ui_game_over_dialog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/ui_pause_dialog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/fonts/ui_hud_font.tres" type="DynamicFont" id=9]
@@ -182,6 +183,16 @@ margin_left = -197.0
 margin_top = -242.5
 margin_right = 197.0
 margin_bottom = 242.5
+
+[node name="ui_game_over_dialog" parent="." instance=ExtResource( 6 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -120.0
+margin_right = 150.0
+margin_bottom = 120.0
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 anchor_left = 1.0
