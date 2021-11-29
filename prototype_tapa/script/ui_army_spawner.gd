@@ -8,6 +8,8 @@ signal attack_started
 onready var unit_list   = get_node('MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer')
 onready var label_coins = get_node('MarginContainer/VBoxContainer/HBoxContainer/Label_coins_counter')
 
+# Variables:
+var total_units: int = 0
 
 func _ready() -> void:
 #	popup()
@@ -23,14 +25,18 @@ func handle_update_coins_counter():
 
 # Señales:
 func _on_Button_pressed():
-	SOUND_FX.button_play("acept")
 	var army_list: Array = Array()
 	var units_btn_list = unit_list.get_children()
 	for item in units_btn_list:
 		if item is MarginContainer:
 			var value = item.get_unit_info()
 			army_list.push_back(value)
+			total_units += value["Amount"]
 	#Signal self -> Spawner_player
-	emit_signal("spawn_units",army_list)
-	emit_signal("attack_started")
-	hide()
+	if total_units != 0:
+		SOUND_FX.button_play("acept")
+		emit_signal("spawn_units",army_list,total_units) #<-total units
+		emit_signal("attack_started")
+		hide()
+	else:
+		SOUND_FX.button_play("back/cancel")

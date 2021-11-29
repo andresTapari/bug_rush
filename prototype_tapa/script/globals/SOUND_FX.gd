@@ -1,5 +1,9 @@
 extends Node
 
+# Music:
+# Jeremy Blake - Powerup! ♫ NO COPYRIGHT 8-bit Music
+# https://www.youtube.com/watch?v=l7SwiFWOQqM
+
 onready var button_sound
 onready var music_player
 
