@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://script/ui_main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/ui_setup_dialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -127,6 +128,10 @@ margin_left = -128.0
 margin_top = -164.0
 margin_right = 128.0
 margin_bottom = 164.0
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 38.1122, 560 )
+texture = ExtResource( 5 )
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_new_game" to="." method="_on_Button_new_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button_continue" to="." method="_on_Button_play_pressed"]

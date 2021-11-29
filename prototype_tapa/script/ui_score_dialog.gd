@@ -31,7 +31,7 @@ func update_parameters(_total_score: int, _top_score: int, _victory_flag: bool) 
 	top_coin		= float(_total_score)*LVL_MASTER.player_info["coin_factor"]
 
 	if _victory_flag:
-		label_victory.bbcode_text = "[center][color=green]VICTORY![/color][/center]"
+		label_victory.bbcode_text = "[center][color=#3FFF33]VICTORY![/color][/center]"
 	else:
 		label_victory.bbcode_text = "[center][color=red]DEFEAT[/color][/center]"
 
