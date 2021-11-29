@@ -184,8 +184,10 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 400, 0 )
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
-bbcode_text = "Made in [url=https://godotengine.org]GODOT[/url]  for GAMEOFF 2021"
-text = "Made in GODOT  for GAMEOFF 2021"
+bbcode_text = "
+Made in [url=https://godotengine.org]GODOT[/url]  for GAMEOFF 2021"
+text = "
+Made in GODOT  for GAMEOFF 2021"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": true
@@ -213,8 +215,10 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 150, 0 )
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
-bbcode_text = "[right][url=https://github.com/andresTapari/bug_rush]Git Repository[/url]  "
-text = "Git Repository  "
+bbcode_text = "
+[right][url=https://github.com/andresTapari/bug_rush]Git Repository[/url]  "
+text = "
+Git Repository  "
 __meta__ = {
 "_edit_use_anchors_": false
 }

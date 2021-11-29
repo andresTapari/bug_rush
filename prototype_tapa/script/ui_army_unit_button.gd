@@ -20,7 +20,7 @@ onready var label_def    = get_node('HBoxContainer/VBoxContainer/HBoxContainer2/
 onready var label_arm    = get_node('HBoxContainer/VBoxContainer/HBoxContainer2/label_stats_arm')
 onready var label_number = get_node('HBoxContainer/VBoxContainer/HBoxContainer/label_numbers')
 onready var label_delay  = get_node('HBoxContainer/VBoxContainer/HBoxContainer/label_delay')
-
+onready var icon_type    = get_node('HBoxContainer/TextureRect')
 	#Buttons:
 onready var btn_n_add	 = get_node('HBoxContainer/VBoxContainer/HBoxContainer/Button_amount_plus')
 onready var btn_n_less	 = get_node('HBoxContainer/VBoxContainer/HBoxContainer/Button_amount_less')
@@ -34,13 +34,14 @@ func _ready() -> void:
 func update_stats(_index: int) -> void:
 	unit_index = _index
 	stats = UNIT_STATS.get_unit_stats(_index)
-	unit_type		 = stats["Type"]
-	label_name.text  = stats["Name"]
-	label_coins.text = String(stats["price"])
-	label_atk.text	 = String(stats["Damage"])
-	label_def.text   = String(stats["Health"])
-	label_arm.text   = String(stats["Armor"])
-	unit_cost 		 = stats["price"]
+	unit_type		  = stats["Type"]
+	label_name.text   = stats["Name"]
+	label_coins.text  = String(stats["price"])
+	label_atk.text	  = String(stats["Damage"])
+	label_def.text    = String(stats["Health"])
+	label_arm.text    = String(stats["Armor"])
+	unit_cost 		  = stats["price"]
+	icon_type.texture = load(stats["icon_path"])
 
 func get_unit_info()-> Dictionary:
 	var info:Dictionary = {

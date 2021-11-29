@@ -21,7 +21,8 @@ var unit_type_1 = {
 					"Armor": 5,
 					"Speed":5,
 					"Lvl":1,
-					"price":1
+					"price":1,
+					"icon_path":"res://assets/thumbnail/unit_type_1.png"
 					}
 
 # Bettle
@@ -33,7 +34,8 @@ var unit_type_2 = {
 					"Armor": 5, 
 					"Speed": 3,
 					"Lvl":1,
-					"price":2 
+					"price":2,
+					"icon_path":"res://assets/thumbnail/unit_type_2.png" 
 					}
 
 # Ladybug
@@ -45,7 +47,8 @@ var unit_type_3 = 	{
 					"Armor": 0,
 					"Speed": 6,
 					"Lvl":1,
-					"price": 1
+					"price": 1,
+					"icon_path":"res://assets/thumbnail/unit_type_3.png"
 					}
 					
 var special_unit_type_1 = {
@@ -56,7 +59,8 @@ var special_unit_type_1 = {
 					"Armor": 0,
 					"Speed": 9,
 					"Range": 5,
-					"price": 2
+					"price": 2,
+					"icon_path":"res://assets/thumbnail/unit_type_4.png"
 }
 
 # Enemy Brick
