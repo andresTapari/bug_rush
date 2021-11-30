@@ -8,6 +8,7 @@ onready var timer_unit_1 = get_node("Timer_1")
 onready var timer_unit_2 = get_node("Timer_2")
 onready var timer_unit_3 = get_node("Timer_3")
 onready var timer_unit_4 = get_node("Timer_4")
+
 var nodos:Array
 var nodos1:Array
 var nodos2:Array

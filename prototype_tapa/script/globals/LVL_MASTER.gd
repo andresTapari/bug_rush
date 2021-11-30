@@ -5,9 +5,10 @@ var player_info = {
 				"score":0,
 				"coins":10,
 				"current_lvl_index":1,
-				"coin_factor": 0.1,
+				"coin_factor": 0.15,
 				"victory_flag": false
 }
+
 var player_default_stats: Dictionary
 # Info de lvl's:
 var lvl_1_info ={

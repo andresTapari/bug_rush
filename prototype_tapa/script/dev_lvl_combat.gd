@@ -9,7 +9,7 @@ var enemy_units: 		Array = []
 
 var enemy_deleted: 		int   = 0
 var enemy_units_total:  int   = 0
-var victory_condition:  int   = 1
+var victory_condition:  float = 1
 var loose_condition: 	int   = 0
 
 var lvl_score: 			int = 0
@@ -46,8 +46,8 @@ func _ready() -> void:
 			element.connect("enemy_unit_destroyed",self,"handle_destroy_enemy")
 			
 	#warning-ignore:narrowing_conversion
-	victory_condition = enemy_counter * (0.2) # 20% de unidades restantes
-	if victory_condition == 0:
+	victory_condition = float(enemy_counter) * (0.2) # 20% de unidades restantes
+	if victory_condition < 1:
 		victory_condition = 1
 	enemy_units_total =  enemy_units.size()
 
@@ -70,8 +70,9 @@ func handle_destroy_enemy(_enemy_unit_name):
 	$ui_hud.update_score(lvl_score)
 
 func handle_destroy_unit(_player_unit_name):
-	player_units.erase(_player_unit_name)
-	loose_condition -= 1
+	if player_units.has(_player_unit_name):
+		player_units.erase(_player_unit_name)
+		loose_condition -= 1
 	if loose_condition == 0:
 		if enemy_units.size() <= victory_condition:
 			$ui_hud/ui_score_dialog.update_parameters(lvl_score,

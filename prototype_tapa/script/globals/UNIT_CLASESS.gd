@@ -17,7 +17,7 @@ var unit_type_1 = {
 					"Type": classes.unit_type_1,
 					"Name":'Warrior Ant',
 					"Health": 10,
-					"Damage": 2,
+					"Damage": 3,
 					"Armor": 5,
 					"Speed":5,
 					"Lvl":1,
@@ -29,7 +29,7 @@ var unit_type_1 = {
 var unit_type_2 = {
 					"Type": classes.unit_type_2,
 					"Name": 'Tank Bettle',
-					"Health": 20,
+					"Health": 30,
 					"Damage": 1, 
 					"Armor": 10, 
 					"Speed": 3,
@@ -59,7 +59,7 @@ var special_unit_type_1 = {
 					"Armor": 0,
 					"Speed": 9,
 					"Range": 3,
-					"price": 10,
+					"price": 20,
 					"icon_path":"res://assets/thumbnail/unit_type_4.png"
 }
 
@@ -95,8 +95,8 @@ var enemy_type_2 = {
 var enemy_type_3 = {
 					"Type": classes.enemy_type_3,
 					"Name": "Bug Spray",
-					"Health": 10,
-					"Damage": 3,
+					"Health": 7,
+					"Damage": 5,
 					"Armor": 0,
 					"Speed": 0,
 					"FR": 0.5,
@@ -110,7 +110,7 @@ var enemy_type_4 = {
 					"Type": classes.enemy_type_4,
 					"Name": "Payana",
 					"Health": 10,
-					"Damage": 3,
+					"Damage": 2,
 					"Armor": 0,
 					"Speed": 0,
 					"FR": 0.5,
