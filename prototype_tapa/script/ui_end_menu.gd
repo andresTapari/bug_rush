@@ -13,3 +13,13 @@ func _on_Button_pressed() -> void:
 	var lvl_selection = "res://lvls/main_menu.tscn"
 	#warning-ignore:return_value_discarded
 	get_tree().change_scene(lvl_selection)
+
+
+func _on_RichTextLabel_meta_clicked(meta) -> void:
+		OS.shell_open(meta)
+
+
+func _on_Button_exit_pressed() -> void:
+	SOUND_FX.button_play("back/cancel")
+	# Guardar progreso
+	get_tree().quit()

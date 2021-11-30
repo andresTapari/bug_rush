@@ -23,8 +23,9 @@ func _on_Button_lvl_selection_pressed() -> void:
 
 func _on_Button_exit_pressed() -> void:
 	SOUND_FX.button_play("back/cancel")
-	# Guardar progreso
-	get_tree().quit()
+	var lvl_selection = "res://lvls/end_menu.tscn"
+	#warning-ignore:return_value_discarded
+	get_tree().change_scene(lvl_selection)
 
 func _on_Button_setup_pressed() -> void:
 	$Setup_dialog.popup_centered()

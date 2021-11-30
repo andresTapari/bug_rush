@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://script/ui_end_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/fonts/ui_hud_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/texture/PNG/Light/texture_07.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -15,6 +16,16 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.196078, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 424.0
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -34,7 +45,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 638.0
-margin_bottom = 454.0
+margin_bottom = 492.0
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 638.0
@@ -123,6 +134,7 @@ size_flags_horizontal = 3
 margin_left = 272.0
 margin_right = 366.0
 margin_bottom = 34.0
+rect_min_size = Vector2( 94, 0 )
 custom_fonts/font = ExtResource( 3 )
 text = "MAIN MENU"
 
@@ -133,11 +145,59 @@ margin_right = 638.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 
-[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_top = 450.0
 margin_right = 638.0
-margin_bottom = 454.0
+margin_bottom = 484.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 268.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+
+[node name="Button_exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 272.0
+margin_right = 366.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 94, 0 )
+custom_fonts/font = ExtResource( 3 )
+text = "EXIT"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 370.0
+margin_right = 638.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 488.0
+margin_right = 638.0
+margin_bottom = 492.0
 size_flags_vertical = 3
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -440.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2"]
+margin_right = 440.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[right]Music:[shake rate=5 level=10] [url=https://www.youtube.com/watch?v=l7SwiFWOQqM]Jeremy Blake - Powerup! [/url] [/shake]"
+text = "Music: Jeremy Blake - Powerup!  "
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/Button_exit" to="." method="_on_Button_exit_pressed"]
+[connection signal="meta_clicked" from="MarginContainer2/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]

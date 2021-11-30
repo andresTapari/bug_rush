@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/ui_lvl_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://script/ui_lvl_selection.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/texture/PNG/Light/texture_07.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -16,7 +17,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -2.53128
 margin_right = -2.53125
+rect_pivot_offset = Vector2( 579, 657.296 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.196078, 1, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 424.0
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

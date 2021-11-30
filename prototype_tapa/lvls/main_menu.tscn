@@ -1,18 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/fonts/Pixeled.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/title.tres" type="DynamicFont" id=1]
 [ext_resource path="res://script/ui_main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/ui_setup_dialog.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/texture/PNG/Light/texture_07.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/ui_hud_font.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/texture/icon/git_logo.png" type="Texture" id=7]
 [ext_resource path="res://assets/texture/icon/icon_godot.png" type="Texture" id=8]
-
-[sub_resource type="DynamicFont" id=1]
-size = 96
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
@@ -24,15 +19,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.156863, 0.796078, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -355.0
-margin_right = 355.0
-margin_bottom = 270.0
-custom_fonts/font = SubResource( 1 )
+margin_left = -412.0
+margin_right = 412.0
+margin_bottom = 296.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center][shake rate=10 level=25]BUG RUSH[/shake]"
 text = "BUG RUSH"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,7 +142,7 @@ margin_right = 319.0
 margin_bottom = -26.8348
 custom_fonts/normal_font = ExtResource( 6 )
 bbcode_enabled = true
-bbcode_text = "[center] a game by [wave amp=50 ] [color=#0000ff] AndresTapa [/color][/wave] and [wave amp=50][color=#700404] FaLoX[/color][/wave] [/center]"
+bbcode_text = "[right] a game by [wave amp=50 ] [color=#0000ff] AndresTapa [/color][/wave] and [wave amp=50][color=#700404] FaLoX[/color][/wave] [/right]"
 text = " a game by   AndresTapa  and  FaLoX "
 fit_content_height = true
 __meta__ = {
