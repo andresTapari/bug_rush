@@ -55,11 +55,11 @@ var special_unit_type_1 = {
 					"Type": classes.special_unit_type_1,
 					"Name": "Bomber Bettle",
 					"Health":10,
-					"Damage":5,
+					"Damage":7.5,
 					"Armor": 0,
-					"Speed": 9,
-					"Range": 3,
-					"price": 20,
+					"Speed": 5,
+					"Range": 5,
+					"price": 15,
 					"icon_path":"res://assets/thumbnail/unit_type_4.png"
 }
 
