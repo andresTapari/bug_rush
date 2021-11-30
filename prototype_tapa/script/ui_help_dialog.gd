@@ -21,7 +21,7 @@ func set_text(_value)->void:
 func _on_Timer_timeout() -> void:
 	text_box.visible_characters += 1
 
-func handle_meta_clicked(meta) -> void:
+func handle_meta_clicked(_meta) -> void:
 	current_idx += 1
 	if current_idx < 5:
 		set_text(current_idx)

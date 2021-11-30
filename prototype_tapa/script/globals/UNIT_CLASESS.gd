@@ -43,7 +43,7 @@ var unit_type_3 = 	{
 					"Type": classes.unit_type_3,
 					"Name": "Kamikaze Ladybug",
 					"Health": 5,
-					"Damage": 4,
+					"Damage": 10,
 					"Armor": 0,
 					"Speed": 6,
 					"Lvl":1,
