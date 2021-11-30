@@ -65,14 +65,14 @@ func _on_ui_score_dialog_visibility_changed():
 func _on_Control_mouse_entered() -> void:
 	var tween = get_node("Mouse_icon/Tween")
 	tween.interpolate_property($Mouse_icon, "modulate",
-		Color(1,1,1,0.2), Color(1,1,1,1), 0.25,
+		Color(1,1,1,0.2), Color(1,1,1,1), 0.40,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
 func _on_Control_mouse_exited() -> void:
 	var tween = get_node("Mouse_icon/Tween")
 	tween.interpolate_property($Mouse_icon, "modulate",
-		Color(1,1,1,1), Color(1,1,1,0.2), 0.25,
+		Color(1,1,1,1), Color(1,1,1,0.2), 0.40,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
