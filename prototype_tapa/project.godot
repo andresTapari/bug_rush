@@ -20,6 +20,7 @@ UNIT_STATS="*res://script/globals/UNIT_CLASESS.gd"
 LVL_MASTER="*res://script/globals/LVL_MASTER.gd"
 SOUND_FX="*res://script/globals/SOUND_FX.gd"
 SETUP="*res://script/globals/SETUP.gd"
+HELP="*res://script/globals/HELP_DIALOGS.gd"
 
 [display]
 

@@ -67,6 +67,7 @@ func handle_destroy_enemy(_enemy_unit_name):
 			element.set_targets_to_attack(enemy_units)
 	if enemy_units.size() == 0:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,lvl_top_score,true)
+		$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_won)
 	$ui_hud.update_score(lvl_score)
 
 func handle_destroy_unit(_player_unit_name):
@@ -77,16 +78,20 @@ func handle_destroy_unit(_player_unit_name):
 		if enemy_units.size() <= victory_condition:
 			$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 														lvl_top_score,true)
+			$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_won)
 		else:
 			$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 														lvl_top_score,false)
+			$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_lost)
 func stop_round():
 	if enemy_units.size() <= victory_condition:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 													lvl_top_score,true)
+		$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_won)
 	else:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 													lvl_top_score,false)
+		$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_lost)
 
 func handle_total_units(_value: int) -> void:
 	loose_condition = _value

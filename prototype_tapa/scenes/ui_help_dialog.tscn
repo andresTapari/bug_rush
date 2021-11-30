@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/fonts/ui_army_unit_button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://script/ui_help_dialog.gd" type="Script" id=2]
+
+[node name="ui_help_dialog" type="MarginContainer"]
+margin_right = 512.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 512, 0 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 512.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 36.0
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 402.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/HBoxContainer"]
+margin_left = 406.0
+margin_right = 512.0
+margin_bottom = 36.0
+hint_tooltip = "You can restore this in SETUP menu."
+custom_fonts/font = ExtResource( 1 )
+text = "HIDE HELP"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 512.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+visible_characters = 0
+percent_visible = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

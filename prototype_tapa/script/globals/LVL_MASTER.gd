@@ -1,11 +1,21 @@
 extends Node
 
 # Info de player:
+enum difficulty {EASY,
+				NORMAL,
+				HARD
+				}
+var coin_factor_table = {
+				"easy": 0.5,
+				"normal": 0.15,
+				"hard": 0.1
+}
 var player_info = {
 				"score":0,
 				"coins":10,
 				"current_lvl_index":1,
-				"coin_factor": 0.15,
+				"coin_factor": coin_factor_table["normal"],
+				"difficulty": difficulty.NORMAL,
 				"victory_flag": false
 }
 

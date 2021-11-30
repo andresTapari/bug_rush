@@ -58,6 +58,7 @@ margin_bottom = 218.0
 [node name="Button_new_game" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_right = 160.0
 margin_bottom = 34.0
+hint_tooltip = "Start new game, all progress will be lost."
 custom_fonts/font = ExtResource( 3 )
 text = "NEW GAME"
 
@@ -73,6 +74,7 @@ size_flags_vertical = 3
 margin_top = 46.0
 margin_right = 160.0
 margin_bottom = 80.0
+hint_tooltip = "Continue from current lvl."
 custom_fonts/font = ExtResource( 3 )
 disabled = true
 text = "CONTINUE"
@@ -89,6 +91,7 @@ size_flags_vertical = 3
 margin_top = 92.0
 margin_right = 160.0
 margin_bottom = 126.0
+hint_tooltip = "Select level to play."
 custom_fonts/font = ExtResource( 3 )
 text = "LVL SELECTION"
 
@@ -104,6 +107,7 @@ size_flags_vertical = 3
 margin_top = 138.0
 margin_right = 160.0
 margin_bottom = 172.0
+hint_tooltip = "Configure"
 custom_fonts/font = ExtResource( 3 )
 text = "SETUP"
 

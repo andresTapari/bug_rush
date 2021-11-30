@@ -36,18 +36,20 @@ func update_score(_value: int) -> void:
 func _on_Button_pressed() -> void:
 	pass
 
-
 func _on_btn_preparar_ataque_pressed() -> void:
 	SOUND_FX.button_play("acept")
+#	$ui_help_dialog.set_text(2)
 	if LVL_MASTER.player_info["coins"] >= 1 or army_generator.units_in_queue():
+		$ui_help_dialog.set_text(HELP.helps_dialogs.spawner_page_1)
 		if player_state == "preparar":
 			army_generator.popup()
 		elif player_state == "atacando":
 			emit_signal("stop_round")
 	else:
 		$ui_game_over_dialog.popup()
-
+		$ui_help_dialog.set_text(HELP.helps_dialogs.game_over)
 func handle_attack_started():
+	$ui_help_dialog.set_text(HELP.helps_dialogs.spawner_focus_start_attack)
 	coins.text = String(LVL_MASTER.player_info["coins"])
 	btn_prepare.text = "Stop Atack"
 	player_state = "atacando"
@@ -63,6 +65,7 @@ func _on_ui_score_dialog_visibility_changed():
 
 
 func _on_Control_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_mouse_help)
 	var tween = get_node("Mouse_icon/Tween")
 	tween.interpolate_property($Mouse_icon, "modulate",
 		Color(1,1,1,0.2), Color(1,1,1,1), 0.40,
@@ -76,3 +79,17 @@ func _on_Control_mouse_exited() -> void:
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 
+func _on_HBoxContainer_score_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_score)
+
+func _on_HBoxContainer_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_coins)
+
+func _on_TextureProgress_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_progress_bar)
+
+func _on_btn_preparar_ataque_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_attack_btn)
+
+func _on_MarginContainer2_mouse_entered() -> void:
+	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_current_lvl)
