@@ -29,3 +29,20 @@ func handle_meta_clicked(meta) -> void:
 func _on_CheckBox_toggled(button_pressed: bool) -> void:
 	visible = !button_pressed
 	SETUP.current["help_en"] = !button_pressed
+
+
+func _on_CheckBox_mouse_entered() -> void:
+	var tween = get_node("Tween")
+	tween.interpolate_property($VBoxContainer/HBoxContainer/CheckBox, "modulate",
+		Color(1,1,1,0.2), Color(1,1,1,1), 0.40,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
+
+
+
+func _on_CheckBox_mouse_exited() -> void:
+	var tween = get_node("Tween")
+	tween.interpolate_property($VBoxContainer/HBoxContainer/CheckBox, "modulate",
+		Color(1,1,1,1), Color(1,1,1,.2), 0.40,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()

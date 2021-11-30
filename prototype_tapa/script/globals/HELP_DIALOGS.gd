@@ -19,7 +19,9 @@ enum helps_dialogs {
 					}
 		
 var dialog_1  = "[center]First click on [color=red]atack[/color] button.[/center]"
-var dialog_2  = "[center]Here you can [color=green]buy[/color] different kinds of units for your army.[/center]"
+var dialog_2  = "[center]Here you can [color=green]buy[/color] different kinds of units for your army. " +\
+				"[color=green]AMOUNT [/color]will set the [color=yellow]NUMBERS[/color] of units you send to attack." +\
+				"[color=green] DELAY[/color] will separate the atack waves in [color=yellow]seconds[/color]."
 var dialog_3  = "[center][color=green]AMOUNT [/color]will set the [color=yellow]NUMBERS[/color] of units you send to attack."
 var dialog_4  = "[center][color=green]DELAY[/color] will separate the atack waves in [color=yellow]seconds[/color].[/center]"
 var dialog_5  = "[center]All [color=green]UNITS[/color] and [color=yellow]COINS[/color] expended in this lvl will be lost for next one, [color=red]manage your resources well.[/color][/center]"
@@ -39,7 +41,7 @@ func get_dialog(_value) -> String:
 		helps_dialogs.entering_level:
 			return dialog_1
 		helps_dialogs.spawner_page_1:
-			return dialog_2 + dialog_3 + dialog_4
+			return dialog_2
 		helps_dialogs.spawner_focus_amount:
 			return dialog_3 + dialog_4
 		helps_dialogs.spawner_focus_delay:
