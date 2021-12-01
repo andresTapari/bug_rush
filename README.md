@@ -30,7 +30,7 @@ Some sounds effects like buttons or the music is played by an instanced AudioStr
 Configuration like full screen, mute sounds or music, and hide help comments, are stored here.
 
 ### HELP:
-Some sounds effects like buttons or the music is played by an instanced AudioStreamPlayer, that load when the game start. It's totally defined trough scripting.
+All the subtitles and functions are defined here, so they can be called anywhere in the scripts.
 
 ### The current lvl:
 Then all the process about what happend while playing the game are managed with the current scene (in this case dev_lvl_1), all levels use the same script, like mostly units. We thought it was properly because the behaviour are almoust the same.
