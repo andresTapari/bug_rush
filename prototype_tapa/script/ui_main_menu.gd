@@ -6,7 +6,8 @@ func _ready() -> void:
 	if LVL_MASTER.player_info["coins"] == 0:
 		$MarginContainer/VBoxContainer/Button_continue.disabled = true
 		$MarginContainer/VBoxContainer/Button_lvl_selection.disabled = true
-	
+	$CB_mute_music.pressed = !SETUP.current["music_en"]
+
 # Señales:
 func _on_Button_play_pressed() -> void:
 	SOUND_FX.button_play("acept")
@@ -42,7 +43,14 @@ func _on_git_repo_meta_clicked(meta) -> void:
 	#warning-ignore:return_value_discarded
 	OS.shell_open(meta)
 
-
 func _on_godot_engine_meta_clicked(meta) -> void:
 	#warning-ignore:return_value_discarded
 	OS.shell_open(meta)
+
+func _on_CheckBox_toggled(button_pressed: bool) -> void:
+	SETUP.current["music_en"] = !button_pressed
+	AudioServer.set_bus_mute(3, button_pressed)
+
+
+func _on_main_menu_focus_entered() -> void:
+	print("test")

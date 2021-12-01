@@ -83,6 +83,8 @@ func handle_destroy_unit(_player_unit_name):
 			$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 														lvl_top_score,false)
 			$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_lost)
+			check_game_over()
+
 func stop_round():
 	if enemy_units.size() <= victory_condition:
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,
@@ -92,6 +94,10 @@ func stop_round():
 		$ui_hud/ui_score_dialog.update_parameters(lvl_score,
 													lvl_top_score,false)
 		$ui_hud/ui_help_dialog.set_text(HELP.helps_dialogs.lvl_lost)
+
+func check_game_over():
+	if LVL_MASTER.player_info["coins"] < 1:
+		$ui_hud/ui_game_over_dialog.popup()
 
 func handle_total_units(_value: int) -> void:
 	loose_condition = _value

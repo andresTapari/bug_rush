@@ -39,7 +39,7 @@ func update_stats(_index: int) -> void:
 	label_coins.text  = String(stats["price"])
 	label_atk.text	  = String(stats["Damage"])
 	label_def.text    = String(stats["Health"])
-	label_arm.text    = String(stats["Armor"])
+	label_arm.text    = String(stats["Speed"])		#whe change to speed at last minute
 	unit_cost 		  = stats["price"]
 	icon_type.texture = load(stats["icon_path"])
 

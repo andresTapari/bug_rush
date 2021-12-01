@@ -14,7 +14,7 @@ atlas = ExtResource( 4 )
 region = Rect2( 48, 0, 48, 48 )
 
 [node name="MarginContainer" type="MarginContainer"]
-margin_right = 331.0
+margin_right = 354.0
 margin_bottom = 133.0
 rect_min_size = Vector2( 331, 133 )
 script = ExtResource( 7 )
@@ -24,14 +24,14 @@ __meta__ = {
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_right = 354.0
-margin_bottom = 138.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-margin_top = 37.0
+margin_top = 34.0
 margin_right = 64.0
-margin_bottom = 101.0
+margin_bottom = 98.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 1 )
@@ -40,7 +40,7 @@ texture = ExtResource( 1 )
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 68.0
 margin_right = 72.0
-margin_bottom = 138.0
+margin_bottom = 133.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -48,20 +48,20 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 76.0
 margin_right = 354.0
-margin_bottom = 138.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 margin_right = 278.0
-margin_bottom = 48.0
+margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="label_name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_top = 10.0
+margin_top = 6.0
 margin_right = 86.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
 text = "unit_name"
 
@@ -69,7 +69,7 @@ text = "unit_name"
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 90.0
 margin_right = 198.0
-margin_bottom = 48.0
+margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -77,113 +77,152 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 202.0
-margin_right = 250.0
+visible = false
+margin_left = 174.0
+margin_right = 222.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 24, 24 )
 texture = ExtResource( 3 )
 stretch_mode = 4
 
+[node name="coin_cost2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 202.0
+margin_top = 6.0
+margin_right = 250.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.917647, 1, 0, 1 )
+text = "Coins:"
+
 [node name="coin_cost" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer3"]
 margin_left = 254.0
-margin_top = 10.0
+margin_top = 6.0
 margin_right = 278.0
-margin_bottom = 38.0
+margin_bottom = 34.0
 custom_fonts/font = ExtResource( 2 )
 text = "##"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 52.0
+margin_top = 45.0
 margin_right = 278.0
-margin_bottom = 100.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
 margin_right = 48.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 24, 24 )
 texture = SubResource( 1 )
 stretch_mode = 4
 
-[node name="label_stats_atk" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 52.0
-margin_top = 10.0
-margin_right = 80.0
-margin_bottom = 38.0
+[node name="label_atk" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 7.0
+margin_right = 38.0
+margin_bottom = 35.0
 custom_fonts/font = ExtResource( 2 )
-text = " ##"
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = " Atk:"
+
+[node name="label_stats_atk" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 42.0
+margin_top = 7.0
+margin_right = 66.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+text = "##"
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 84.0
-margin_right = 99.0
-margin_bottom = 48.0
+margin_left = 70.0
+margin_right = 84.0
+margin_bottom = 42.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 103.0
-margin_right = 151.0
+visible = false
+margin_left = 96.0
+margin_right = 144.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 24, 24 )
 texture = ExtResource( 5 )
 stretch_mode = 4
 
+[node name="label_health" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 88.0
+margin_top = 7.0
+margin_right = 146.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 1, 0.133333, 1 )
+text = "Heatlh:"
+
 [node name="label_stats_def" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 155.0
-margin_top = 10.0
-margin_right = 179.0
-margin_bottom = 38.0
+margin_left = 150.0
+margin_top = 7.0
+margin_right = 174.0
+margin_bottom = 35.0
 custom_fonts/font = ExtResource( 2 )
 text = "##"
 
 [node name="VSeparator3" type="VSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 183.0
-margin_right = 198.0
-margin_bottom = 48.0
+margin_left = 178.0
+margin_right = 192.0
+margin_bottom = 42.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect3" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 202.0
-margin_right = 250.0
+visible = false
+margin_left = 186.0
+margin_right = 234.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 24, 24 )
 texture = ExtResource( 6 )
 stretch_mode = 4
 
+[node name="label_stats_arm2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 196.0
+margin_top = 7.0
+margin_right = 250.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0.619608, 0, 1 )
+text = "Speed:"
+
 [node name="label_stats_arm" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 254.0
-margin_top = 10.0
+margin_top = 7.0
 margin_right = 278.0
-margin_bottom = 38.0
+margin_bottom = 35.0
 custom_fonts/font = ExtResource( 2 )
 text = "##"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 104.0
+margin_top = 91.0
 margin_right = 278.0
-margin_bottom = 138.0
+margin_bottom = 133.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_top = 3.0
+margin_top = 7.0
 margin_right = 70.0
-margin_bottom = 31.0
+margin_bottom = 35.0
 custom_fonts/font = ExtResource( 2 )
 text = "Amount: "
 
 [node name="Button_amount_less" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 74.0
 margin_right = 94.0
-margin_bottom = 34.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 20, 20 )
 custom_fonts/font = ExtResource( 2 )
 disabled = true
@@ -191,9 +230,9 @@ text = "-"
 
 [node name="label_numbers" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 98.0
-margin_top = 3.0
+margin_top = 7.0
 margin_right = 118.0
-margin_bottom = 31.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -202,7 +241,7 @@ align = 1
 [node name="Button_amount_plus" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 122.0
 margin_right = 142.0
-margin_bottom = 34.0
+margin_bottom = 42.0
 custom_fonts/font = ExtResource( 2 )
 text = "+"
 
@@ -210,22 +249,22 @@ text = "+"
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 146.0
 margin_right = 150.0
-margin_bottom = 34.0
+margin_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="label2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 154.0
-margin_top = 3.0
+margin_top = 7.0
 margin_right = 206.0
-margin_bottom = 31.0
+margin_bottom = 35.0
 custom_fonts/font = ExtResource( 2 )
 text = "Delay: "
 
 [node name="Button_delay_less" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 210.0
 margin_right = 230.0
-margin_bottom = 34.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 20, 20 )
 custom_fonts/font = ExtResource( 2 )
 disabled = true
@@ -233,9 +272,9 @@ text = "-"
 
 [node name="label_delay" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 234.0
-margin_top = 3.0
+margin_top = 7.0
 margin_right = 254.0
-margin_bottom = 31.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 20, 0 )
 custom_fonts/font = ExtResource( 2 )
 text = "0"
@@ -244,7 +283,7 @@ align = 1
 [node name="Button_delay_plus" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 258.0
 margin_right = 278.0
-margin_bottom = 34.0
+margin_bottom = 42.0
 custom_fonts/font = ExtResource( 2 )
 text = "+"
 
