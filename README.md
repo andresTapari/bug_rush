@@ -41,7 +41,7 @@ All the levels has the same structure, the lightblue box are the player related 
 
 ## KNOWN BUGS:
 This are some bugs we know the game have but didn't had the time to fix them:
-* Progress bar tells you "winner" when you dont: Some times the progress will become green thats mean you you are alowed to pass to next level when actually you don't.
+* Progress bar tells you "winner" when you dont: Some times the progress bar (Level Progress) will become green, thats mean you are alowed to pass to next level when actually you don't (and you dont pass).
 
 ![meme](https://github.com/andresTapari/bug_rush/blob/main/img/meme.jpeg)
 
