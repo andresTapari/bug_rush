@@ -194,6 +194,7 @@ margin_right = 216.0
 margin_bottom = 228.0
 
 [node name="ui_game_over_dialog" parent="." instance=ExtResource( 6 )]
+pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -369,6 +370,7 @@ __meta__ = {
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer" to="." method="_on_HBoxContainer_mouse_entered"]
 [connection signal="about_to_show" from="ui_pause_dialog" to="." method="_on_ui_pause_dialog_about_to_show"]
 [connection signal="popup_hide" from="ui_pause_dialog" to="." method="_on_ui_pause_dialog_popup_hide"]
+[connection signal="popup_hide" from="ui_game_over_dialog" to="." method="_on_ui_game_over_dialog_popup_hide"]
 [connection signal="mouse_entered" from="MarginContainer2" to="." method="_on_MarginContainer2_mouse_entered"]
 [connection signal="mouse_entered" from="Mouse_icon" to="." method="_on_Control_mouse_entered"]
 [connection signal="mouse_exited" from="Mouse_icon" to="." method="_on_Control_mouse_exited"]

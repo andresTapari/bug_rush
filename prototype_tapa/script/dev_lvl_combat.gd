@@ -97,6 +97,7 @@ func stop_round():
 
 func check_game_over():
 	if LVL_MASTER.player_info["coins"] < 1:
+		$ui_hud/ui_score_dialog.hide()
 		$ui_hud/ui_game_over_dialog.popup()
 
 func handle_total_units(_value: int) -> void:

@@ -9,8 +9,8 @@ onready var army_generator	  = get_node('ui_army_spawner')
 onready var score_counter	  = get_node('MarginContainer/VBoxContainer/HBoxContainer3/Label_score_counter')
 onready var lvl_counter		  = get_node('MarginContainer2/VBoxContainer/HBoxContainer2/Label_lvl_counter')
 onready var coins		  	  = get_node('MarginContainer/VBoxContainer/HBoxContainer/Label_coint_counter')
-#onready var score_dialog	  = get_node("ui_score_dialog")
 
+#onready var score_dialog	  = get_node("ui_score_dialog")
 var player_state: String = "preparar"
 var current_lvl: int = 0
 
@@ -26,7 +26,6 @@ func _ready() -> void:
 
 func _input(event) -> void:
 	if  event is InputEventKey and Input.is_action_pressed("pause"):
-		print(event)
 		$ui_pause_dialog.popup()
 
 func update_score(_value: int) -> void:
@@ -93,3 +92,8 @@ func _on_btn_preparar_ataque_mouse_entered() -> void:
 
 func _on_MarginContainer2_mouse_entered() -> void:
 	$ui_help_dialog.set_text(HELP.helps_dialogs.hud_focus_current_lvl)
+
+
+func _on_ui_game_over_dialog_popup_hide() -> void:
+	if get_tree().paused:
+		get_tree().paused = false
