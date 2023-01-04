@@ -1,5 +1,4 @@
 extends Control
-#  Esto es un comentario
 
 
 func _ready() -> void:
