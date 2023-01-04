@@ -1,4 +1,6 @@
 extends Control
+#  Esto es un comentario
+
 
 func _ready() -> void:
 	if LVL_MASTER.player_info["current_lvl_index"] != 1:
